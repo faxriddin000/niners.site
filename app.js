@@ -548,6 +548,11 @@ function setLanguage(lang) {
   const chevron = document.getElementById('lang-chevron');
   if (dropdown) dropdown.classList.add('hidden');
   if (chevron) chevron.classList.remove('rotate-180');
+
+  // Trigger reactive CMS website sync for the new language
+  if (typeof syncLiveWebsite === 'function') {
+    syncLiveWebsite();
+  }
 }
 
 // Global branch selection router
@@ -609,6 +614,7 @@ window.handleFormSubmit = function(e) {
   const phoneVal = document.getElementById('phoneNumber').value.trim();
   const courseVal = document.getElementById('courseSelect').value;
   const branchVal = document.getElementById('branchSelect').value;
+  const teacherVal = document.getElementById('teacherSelect') ? document.getElementById('teacherSelect').value : "any";
   const submitBtn = document.getElementById('submit-btn');
   const submitText = document.getElementById('submit-text');
 
@@ -622,6 +628,32 @@ window.handleFormSubmit = function(e) {
     submitBtn.disabled = true;
     submitBtn.classList.add('opacity-75');
     if (submitText) submitText.textContent = currentLanguage === 'uz' ? "Yuborilmoqda..." : (currentLanguage === 'ru' ? "Отправка..." : "Sending...");
+  }
+
+  // Automatically save new lead into reactive CMS state (Leads CRM)
+  const newLead = {
+    id: "lead-" + Date.now(),
+    fullName: nameVal,
+    phoneNumber: phoneVal,
+    course: courseVal,
+    branch: branchVal,
+    teacher: teacherVal,
+    comment: "Sayt ro'yxatdan o'tish formasi orqali",
+    status: "Yangi",
+    createdAt: new Date().toLocaleString()
+  };
+
+  if (typeof cmsData !== 'undefined') {
+    if (!cmsData.leads) cmsData.leads = [];
+    cmsData.leads.unshift(newLead);
+    if (typeof saveCMSData === 'function') {
+      saveCMSData();
+    }
+  }
+
+  // Forward to Telegram Bot if configured
+  if (typeof sendTelegramLeadNotification === 'function') {
+    sendTelegramLeadNotification(newLead);
   }
 
   setTimeout(() => {
@@ -790,4 +822,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 5. Interactive Cards Micro-interaction Enhancement (UIC Group Agency Style)
+  const interactiveCards = document.querySelectorAll('.hover-lift-card');
+  interactiveCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transition = 'all 300ms cubic-bezier(0.16, 1, 0.3, 1)';
+    });
+  });
+
 });
+

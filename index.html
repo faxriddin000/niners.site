@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Niners Learning Center | Toshkentdagi N1 Ingliz Tili & IELTS Markazi</title>
-  <meta name="description" content="Niners Learning Center - Toshkentdagi rasmiy brend o'quv markazi. Native speakerlar bilan muloqot, IELTS 8.5+ natijalar, va Mr. Abdulbosit hamda Mr. Wise (Mirsaid) kabi top ustozlar jamoasi.">
+  <title>Niners Learning Center | Rasmiy N1 Ingliz Tili & IELTS Markazi</title>
+  <meta name="description" content="Niners Learning Center - Toshkentdagi rasmiy brend o'quv markazi. Native speakerlar bilan muloqot, IELTS 8.5+ natijalar, Mr. Abdulbosit va Mr. Wise (Mirsaid) kabi top ustozlar jamoasi.">
   
-  <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- FontAwesome 6 CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -22,164 +22,170 @@
       theme: {
         extend: {
           colors: {
-            niners: {
-              black: '#0A0A0A',
-              dark: '#121212',
-              card: '#18181B',
-              cardHover: '#202024',
+            brand: {
               yellow: '#FFCC00',
               yellowHover: '#E6B800',
               yellowLight: '#FFFBEA',
               yellowMuted: 'rgba(255, 204, 0, 0.12)',
+              black: '#0A0A0A',
+              charcoal: '#121212',
+              cardDark: '#18181B',
+              cardDarkHover: '#222226',
               grayLight: '#F8F9FA',
               borderDark: 'rgba(255, 255, 255, 0.08)',
-              borderYellow: 'rgba(255, 204, 0, 0.4)'
+              borderYellow: 'rgba(255, 204, 0, 0.45)'
             }
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['"Space Grotesk"', 'sans-serif']
+            display: ['"Space Grotesk"', 'sans-serif'],
+            logo: ['"Poppins"', 'sans-serif']
           }
         }
       }
     }
   </script>
 
-  <!-- Custom UIC Inspired Styles -->
+  <!-- Custom Stylesheet (Guaranteed Hover Animations & Glow) -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-white text-zinc-900 font-sans selection:bg-niners-yellow selection:text-black">
+<body class="bg-white text-zinc-950 font-sans selection:bg-brand-yellow selection:text-black">
 
-  <!-- ================= TOP NOTICE / TICKER ================= -->
-  <div class="bg-niners-black text-xs text-zinc-300 py-2.5 border-b border-white/10 px-4">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2.5">
-      <div class="flex items-center gap-2.5">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-niners-yellow text-niners-black">
-          <span class="w-1.5 h-1.5 rounded-full bg-black animate-ping"></span>
-          <span data-i18n="topBarBadge">QABUL 2026</span>
+  <!-- ================= TOP NOTICE TICKER (OFFICIAL BRAND YELLOW) ================= -->
+  <div class="bg-brand-yellow text-brand-black text-xs font-semibold border-b border-black/10">
+    <div class="max-w-7xl mx-auto px-6 h-11 flex items-center justify-between gap-4 text-left">
+      <div class="flex items-center gap-2.5 overflow-hidden">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-black bg-black text-brand-yellow tracking-wider shrink-0">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-yellow animate-ping"></span>
+          <span data-i18n="topBarBadge">YANGI MAVSUM 2026</span>
         </span>
-        <span class="text-zinc-300" data-i18n="topBarText">Toshkentdagi barcha 3 ta filialda yangi intensiv guruhlarga qabul boshlandi!</span>
+        <span class="font-bold text-black truncate" data-i18n="topBarText">Toshkentdagi barcha 3 ta filialda yangi intensiv guruhlarga qabul ochiq!</span>
       </div>
-      <div class="flex items-center gap-4 text-xs font-semibold">
-        <a href="tel:+998951468180" class="hover:text-niners-yellow transition flex items-center gap-1.5 text-zinc-200">
-          <i class="fa-solid fa-phone text-niners-yellow"></i> +998 95 146 8180
+      <div class="flex items-center gap-4 text-xs font-bold shrink-0">
+        <a href="tel:+998951468180" class="hover:underline flex items-center gap-1.5 text-black">
+          <i class="fa-solid fa-phone"></i> +998 95 146 8180
         </a>
-        <span class="text-zinc-600 hidden sm:inline">|</span>
-        <span class="hidden sm:flex items-center gap-1.5 text-zinc-400">
-          <i class="fa-regular fa-clock text-niners-yellow"></i> 08:30 - 20:30
+        <span class="text-black/30 hidden sm:inline">|</span>
+        <span class="hidden sm:flex items-center gap-1.5 text-black/80 font-medium">
+          <i class="fa-regular fa-clock"></i> 08:30 - 20:30 (Dush - Shanba)
         </span>
       </div>
     </div>
   </div>
 
-  <!-- ================= NAVBAR (UIC GROUP INSPIRED) ================= -->
-  <header id="main-header" class="sticky top-0 z-50 bg-niners-black/95 backdrop-blur-xl border-b border-white/10 transition-all duration-300 shadow-xl">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+  <!-- ================= HEADER (OFFICIAL LOGO + UIC NAVIGATION) ================= -->
+  <header id="main-header" class="sticky top-0 z-50 bg-brand-black/95 backdrop-blur-xl border-b border-white/10 transition-all duration-300 shadow-xl">
+    <div class="navbar-inner max-w-7xl mx-auto px-6 h-20 flex items-center justify-between flex-nowrap whitespace-nowrap gap-6">
+      
+      <!-- 1. LEFT: Official 9 Niners LEARNING CENTER Logo (flex-shrink-0) -->
+      <a href="#" class="flex items-center gap-3 shrink-0 group py-1">
+        <div class="bg-brand-yellow px-3 py-1.5 rounded-xl shadow-md flex items-center gap-2.5 border border-yellow-300/60">
+          <!-- Layered Frames with Black Square and Yellow "9" on the left -->
+          <div class="relative w-8 h-8 shrink-0 flex items-center justify-center">
+            <div class="absolute inset-0 border-2 border-black/40 rounded-lg translate-x-0.5 translate-y-0.5"></div>
+            <div class="relative w-full h-full bg-black rounded-lg flex items-center justify-center shadow-sm">
+              <span class="font-logo font-black text-xl text-brand-yellow leading-none select-none">9</span>
+            </div>
+          </div>
+          <!-- Bold Black Text on the right: "Niners" & "LEARNING CENTER" -->
+          <div class="flex flex-col text-left">
+            <span class="font-logo font-black text-base text-black leading-none tracking-tight">Niners</span>
+            <span class="font-sans font-black text-[7.5px] uppercase tracking-[0.16em] text-black/80 mt-0.5">LEARNING CENTER</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 2. CENTER: Desktop Navigation Menu Links (Horizontal row, gap: 28px) -->
+      <nav class="hidden xl:flex items-center gap-7 font-semibold text-sm text-zinc-300 whitespace-nowrap">
+        <a href="#about" class="hover:text-brand-yellow transition-colors duration-200" data-i18n="navAbout">Biz haqimizda</a>
+        <a href="#courses" class="hover:text-brand-yellow transition-colors duration-200" data-i18n="navCourses">Kurslar</a>
+        <a href="#pricing" class="hover:text-brand-yellow transition-colors duration-200">Tariflar</a>
+        <a href="#branches" class="hover:text-brand-yellow transition-colors duration-200" data-i18n="navBranches">Filiallar</a>
+        <a href="#reviews" class="hover:text-brand-yellow transition-colors duration-200" data-i18n="navReviews">Sharhlar</a>
+        <a href="#teachers" class="hover:text-brand-yellow transition-colors duration-200" data-i18n="navTeachers">Ustozlar</a>
+        <a href="#faq" class="hover:text-brand-yellow transition-colors duration-200" data-i18n="navFaq">FAQ</a>
+      </nav>
+
+      <!-- 3. RIGHT: Action Controls (Horizontal row, gap: 12px, flex-shrink-0) -->
+      <div class="hidden sm:flex items-center gap-3 shrink-0 whitespace-nowrap">
         
-        <!-- Official Niners Logo (9-Box Emblem + Typography) -->
-        <a href="#" class="flex items-center gap-3.5 group">
-          <!-- Iconic 9-Box Grid Emblem in Brand Yellow -->
-          <div class="w-11 h-11 bg-niners-black border border-white/20 rounded-xl p-1.5 flex flex-col justify-between group-hover:border-niners-yellow transition-all duration-300 shadow-lg shadow-niners-yellow/10">
-            <div class="grid grid-cols-3 gap-1 w-full h-full">
-              <div class="bg-niners-yellow rounded-[2px] transition group-hover:scale-95"></div>
-              <div class="bg-niners-yellow rounded-[2px] transition group-hover:scale-95"></div>
-              <div class="bg-niners-yellow rounded-[2px] transition group-hover:scale-95"></div>
-              <div class="bg-niners-yellow rounded-[2px] transition group-hover:scale-95"></div>
-              <div class="bg-niners-yellow rounded-[2px] transition group-hover:scale-95"></div>
-              <div class="bg-niners-yellow rounded-[2px] transition group-hover:scale-95"></div>
-              <div class="bg-niners-yellow rounded-[2px] transition group-hover:scale-95"></div>
-              <div class="bg-niners-yellow rounded-[2px] transition group-hover:scale-95"></div>
-              <div class="bg-niners-yellow rounded-[2px] transition group-hover:scale-95"></div>
-            </div>
-          </div>
-          <div class="flex flex-col">
-            <span class="font-display font-extrabold text-2xl tracking-tight text-white flex items-center gap-1">
-              NINERS<span class="text-niners-yellow">.</span>
-            </span>
-            <span class="text-[9px] uppercase tracking-widest text-zinc-400 font-semibold" data-i18n="logoSub">Learning Center</span>
-          </div>
-        </a>
-
-        <!-- Desktop Navigation (UIC style minimal & sleek) -->
-        <nav class="hidden lg:flex items-center space-x-8 font-medium text-sm text-zinc-300">
-          <a href="#about" class="hover:text-niners-yellow transition-colors" data-i18n="navAbout">Biz haqimizda</a>
-          <a href="#courses" class="hover:text-niners-yellow transition-colors" data-i18n="navCourses">Kurslar</a>
-          <a href="#branches" class="hover:text-niners-yellow transition-colors" data-i18n="navBranches">Filiallar</a>
-          <a href="#reviews" class="hover:text-niners-yellow transition-colors" data-i18n="navReviews">Sharhlar</a>
-          <a href="#teachers" class="hover:text-niners-yellow transition-colors" data-i18n="navTeachers">Ustozlar</a>
-          <a href="#faq" class="hover:text-niners-yellow transition-colors" data-i18n="navFaq">FAQ</a>
-        </nav>
-
-        <!-- Right Side: Language Switcher & Yellow CTA -->
-        <div class="hidden sm:flex items-center gap-4">
-          
-          <!-- Language Dropdown Toggle -->
-          <div class="relative" id="lang-dropdown-wrapper">
-            <button id="lang-menu-btn" type="button" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-bold border border-white/10 transition">
-              <i class="fa-solid fa-globe text-niners-yellow text-sm"></i>
-              <span id="current-lang-label">UZ</span>
-              <i class="fa-solid fa-chevron-down text-[10px] text-zinc-400 transition-transform duration-200" id="lang-chevron"></i>
+        <!-- Language Dropdown Toggle -->
+        <div class="relative" id="lang-dropdown-wrapper">
+          <button id="lang-menu-btn" type="button" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-bold border border-white/10 transition">
+            <i class="fa-solid fa-globe text-brand-yellow text-sm"></i>
+            <span id="current-lang-label">UZ</span>
+            <i class="fa-solid fa-chevron-down text-[10px] text-zinc-400 transition-transform duration-200" id="lang-chevron"></i>
+          </button>
+          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-36 bg-brand-charcoal border border-white/15 rounded-2xl shadow-2xl py-1 z-50 overflow-hidden">
+            <button class="w-full text-left px-4 py-2.5 text-xs font-bold text-zinc-200 hover:bg-brand-yellow hover:text-black flex items-center justify-between transition lang-option" data-lang="uz">
+              <span>O'zbekcha</span>
+              <span class="text-[10px] uppercase font-black text-brand-yellow">UZ</span>
             </button>
-            <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-36 bg-niners-dark border border-white/10 rounded-2xl shadow-2xl py-1 z-50 overflow-hidden">
-              <button class="w-full text-left px-4 py-2.5 text-xs font-semibold text-zinc-200 hover:bg-niners-yellow hover:text-black flex items-center justify-between transition lang-option" data-lang="uz">
-                <span>O'zbekcha</span>
-                <span class="text-[10px] uppercase font-bold text-niners-yellow">UZ</span>
-              </button>
-              <button class="w-full text-left px-4 py-2.5 text-xs font-semibold text-zinc-200 hover:bg-niners-yellow hover:text-black flex items-center justify-between transition lang-option" data-lang="ru">
-                <span>Русский</span>
-                <span class="text-[10px] uppercase font-bold text-zinc-400">RU</span>
-              </button>
-              <button class="w-full text-left px-4 py-2.5 text-xs font-semibold text-zinc-200 hover:bg-niners-yellow hover:text-black flex items-center justify-between transition lang-option" data-lang="en">
-                <span>English</span>
-                <span class="text-[10px] uppercase font-bold text-zinc-400">EN</span>
-              </button>
-            </div>
+            <button class="w-full text-left px-4 py-2.5 text-xs font-bold text-zinc-200 hover:bg-brand-yellow hover:text-black flex items-center justify-between transition lang-option" data-lang="ru">
+              <span>Русский</span>
+              <span class="text-[10px] uppercase font-black text-zinc-400">RU</span>
+            </button>
+            <button class="w-full text-left px-4 py-2.5 text-xs font-bold text-zinc-200 hover:bg-brand-yellow hover:text-black flex items-center justify-between transition lang-option" data-lang="en">
+              <span>English</span>
+              <span class="text-[10px] uppercase font-black text-zinc-400">EN</span>
+            </button>
           </div>
-
-          <!-- UIC Yellow Primary CTA -->
-          <a href="#register" class="btn-uic-yellow inline-flex items-center justify-center px-6 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider text-black shadow-lg shadow-niners-yellow/20">
-            <span class="flex items-center gap-2" data-i18n="ctaButton">
-              Kursga yozilish
-              <i class="fa-solid fa-arrow-right text-xs"></i>
-            </span>
-          </a>
         </div>
 
-        <!-- Mobile Controls -->
-        <div class="flex items-center gap-2 lg:hidden">
-          <button id="mobile-lang-cycle-btn" class="px-2.5 py-1.5 text-xs rounded-xl bg-zinc-900 text-niners-yellow font-bold border border-white/10">
-            <span id="mobile-lang-label">UZ</span>
-          </button>
-          
-          <button id="mobile-menu-toggle" type="button" class="p-2.5 rounded-xl bg-zinc-900 text-zinc-200 hover:text-white border border-white/10 focus:outline-none">
-            <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
-          </button>
-        </div>
+        <!-- Admin CMS Trigger Button -->
+        <button onclick="openCMS()" class="cms-trigger-btn flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white text-xs font-bold border border-white/10 transition" title="Admin Boshqaruv Tizimi (CMS)">
+          <i class="fa-solid fa-lock text-brand-yellow text-[11px]"></i>
+          <span>Admin</span>
+        </button>
 
+        <!-- UIC Yellow Primary CTA -->
+        <a href="#register" class="btn-yellow-primary inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-black text-xs uppercase tracking-wider text-black shadow-lg shadow-brand-yellow/20">
+          <span class="flex items-center gap-2" data-i18n="ctaButton">
+            Kursga yozilish
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </span>
+        </a>
       </div>
+
+      <!-- Mobile Controls (Hamburger) -->
+      <div class="flex items-center gap-2 xl:hidden shrink-0">
+        <button id="mobile-lang-cycle-btn" class="px-2.5 py-1.5 text-xs rounded-xl bg-zinc-900 text-brand-yellow font-black border border-white/10">
+          <span id="mobile-lang-label">UZ</span>
+        </button>
+        
+        <button id="mobile-menu-toggle" type="button" class="p-2.5 rounded-xl bg-zinc-900 text-zinc-200 hover:text-white border border-white/10 focus:outline-none">
+          <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+        </button>
+      </div>
+
     </div>
 
     <!-- Mobile Slideout Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-niners-dark border-b border-white/10 px-6 pt-4 pb-6 space-y-3">
-      <a href="#about" class="block py-2.5 text-zinc-200 font-semibold hover:text-niners-yellow border-b border-white/5" data-i18n="navAbout">Biz haqimizda</a>
-      <a href="#courses" class="block py-2.5 text-zinc-200 font-semibold hover:text-niners-yellow border-b border-white/5" data-i18n="navCourses">Kurslar</a>
-      <a href="#branches" class="block py-2.5 text-zinc-200 font-semibold hover:text-niners-yellow border-b border-white/5" data-i18n="navBranches">Filiallar</a>
-      <a href="#reviews" class="block py-2.5 text-zinc-200 font-semibold hover:text-niners-yellow border-b border-white/5" data-i18n="navReviews">Sharhlar</a>
-      <a href="#teachers" class="block py-2.5 text-zinc-200 font-semibold hover:text-niners-yellow border-b border-white/5" data-i18n="navTeachers">Ustozlar</a>
-      <a href="#faq" class="block py-2.5 text-zinc-200 font-semibold hover:text-niners-yellow border-b border-white/5" data-i18n="navFaq">FAQ</a>
+    <div id="mobile-menu" class="hidden xl:hidden bg-brand-charcoal border-b border-white/10 px-6 pt-4 pb-6 space-y-3">
+      <a href="#about" class="block py-2.5 text-zinc-200 font-semibold hover:text-brand-yellow border-b border-white/5" data-i18n="navAbout">Biz haqimizda</a>
+      <a href="#courses" class="block py-2.5 text-zinc-200 font-semibold hover:text-brand-yellow border-b border-white/5" data-i18n="navCourses">Kurslar</a>
+      <a href="#pricing" class="block py-2.5 text-zinc-200 font-semibold hover:text-brand-yellow border-b border-white/5">Tariflar & Narxlar</a>
+      <a href="#branches" class="block py-2.5 text-zinc-200 font-semibold hover:text-brand-yellow border-b border-white/5" data-i18n="navBranches">Filiallar</a>
+      <a href="#reviews" class="block py-2.5 text-zinc-200 font-semibold hover:text-brand-yellow border-b border-white/5" data-i18n="navReviews">Sharhlar</a>
+      <a href="#teachers" class="block py-2.5 text-zinc-200 font-semibold hover:text-brand-yellow border-b border-white/5" data-i18n="navTeachers">Ustozlar</a>
+      <a href="#faq" class="block py-2.5 text-zinc-200 font-semibold hover:text-brand-yellow border-b border-white/5" data-i18n="navFaq">FAQ</a>
 
       <div class="pt-3 flex items-center justify-between border-t border-white/10">
-        <span class="text-xs text-zinc-400 font-medium" data-i18n="selectLang">Tilni tanlang:</span>
+        <span class="text-xs text-zinc-400 font-semibold" data-i18n="selectLang">Tilni tanlang:</span>
         <div class="flex gap-2">
-          <button class="px-3 py-1 rounded-lg text-xs font-bold bg-zinc-800 text-zinc-200 active:bg-niners-yellow active:text-black lang-option" data-lang="uz">UZ</button>
-          <button class="px-3 py-1 rounded-lg text-xs font-bold bg-zinc-800 text-zinc-200 active:bg-niners-yellow active:text-black lang-option" data-lang="ru">RU</button>
-          <button class="px-3 py-1 rounded-lg text-xs font-bold bg-zinc-800 text-zinc-200 active:bg-niners-yellow active:text-black lang-option" data-lang="en">EN</button>
+          <button class="px-3 py-1 rounded-lg text-xs font-black bg-zinc-800 text-zinc-200 active:bg-brand-yellow active:text-black lang-option" data-lang="uz">UZ</button>
+          <button class="px-3 py-1 rounded-lg text-xs font-black bg-zinc-800 text-zinc-200 active:bg-brand-yellow active:text-black lang-option" data-lang="ru">RU</button>
+          <button class="px-3 py-1 rounded-lg text-xs font-black bg-zinc-800 text-zinc-200 active:bg-brand-yellow active:text-black lang-option" data-lang="en">EN</button>
         </div>
       </div>
       
-      <div class="pt-3">
-        <a href="#register" class="w-full block text-center py-3.5 rounded-xl font-bold uppercase tracking-wider text-black bg-niners-yellow shadow-md" data-i18n="ctaButton">
+      <div class="pt-3 space-y-2">
+        <button onclick="openCMS()" class="cms-trigger-btn w-full py-3 px-4 rounded-xl bg-zinc-900 border border-white/10 text-xs font-bold text-zinc-200 hover:text-brand-yellow flex items-center justify-center gap-2 transition">
+          <i class="fa-solid fa-lock text-brand-yellow"></i>
+          <span>Admin Panel (CMS)</span>
+        </button>
+
+        <a href="#register" class="w-full block text-center py-3.5 rounded-xl font-black uppercase tracking-wider text-black bg-brand-yellow shadow-md" data-i18n="ctaButton">
           Kursga yozilish
         </a>
       </div>
@@ -187,22 +193,22 @@
   </header>
 
   <!-- ================= HERO SECTION (UIC GROUP TECH VIBE) ================= -->
-  <section class="relative bg-niners-black text-white pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden bg-grid-pattern">
+  <section class="relative bg-brand-black text-white pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden bg-tech-grid">
     
-    <!-- Signature Yellow Subtle Glow Spots -->
-    <div class="absolute -top-40 -left-40 w-96 h-96 bg-niners-yellow/10 rounded-full blur-[120px] pointer-events-none"></div>
-    <div class="absolute top-1/2 -right-40 w-[32rem] h-[32rem] bg-niners-yellow/15 rounded-full blur-[140px] pointer-events-none"></div>
+    <!-- Signature Yellow Ambient Glow Spots -->
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-brand-yellow/15 rounded-full blur-[130px] pointer-events-none"></div>
+    <div class="absolute top-1/2 -right-40 w-[34rem] h-[34rem] bg-brand-yellow/20 rounded-full blur-[150px] pointer-events-none"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Left: Headline & Actions -->
+        <!-- Left: Headline & CTA -->
         <div class="lg:col-span-7 space-y-7 text-center lg:text-left">
           
           <!-- UIC Style Tag Badge -->
           <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-zinc-900 border border-white/10 text-xs sm:text-sm font-semibold text-white shadow-inner">
-            <span class="w-2 h-2 rounded-full bg-niners-yellow animate-ping"></span>
-            <span class="text-niners-yellow font-display font-bold">NINERS LEARNING CENTER</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-brand-yellow animate-ping"></span>
+            <span class="text-brand-yellow font-display font-black">NINERS LEARNING CENTER</span>
             <span class="text-zinc-500">|</span>
             <span class="text-zinc-300" data-i18n="heroBadge">Toshkentdagi Rasmiy N1 Markaz</span>
           </div>
@@ -210,7 +216,7 @@
           <!-- Bold Typography -->
           <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight leading-[1.08]">
             <span data-i18n="heroTitlePart1">Ingliz tilida</span> 
-            <span class="text-niners-yellow relative inline-block underline decoration-niners-yellow/40 underline-offset-8" data-i18n="heroTitleGradient">erkin va ravon</span> 
+            <span class="text-brand-yellow relative inline-block underline decoration-brand-yellow/40 underline-offset-8" data-i18n="heroTitleGradient">erkin va ravon</span> 
             <span data-i18n="heroTitlePart2">so'zlashishni boshlang!</span>
           </h1>
 
@@ -218,15 +224,15 @@
             Niners Learning Centerda 1 yil ta'lim olib, AQSH, Filippin va Misr kabi davlatlarning native speakerlari bilan to'siqlarsiz erkin muloqot qiling. Top master ustozlar va zamonaviy interaktiv metodika.
           </p>
 
-          <!-- Action Buttons (UIC Style) -->
+          <!-- Action Buttons -->
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="#register" class="btn-uic-yellow w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider text-black flex items-center justify-center gap-2.5 group">
+            <a href="#register" class="btn-yellow-primary w-full sm:w-auto px-8 py-4 rounded-xl font-black text-sm uppercase tracking-wider text-black flex items-center justify-center gap-2.5 group">
               <span data-i18n="heroBtnEnroll">Bepul Sinov Darsiga Yozilish</span>
               <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
             </a>
             
-            <a href="#branches" class="w-full sm:w-auto px-7 py-4 rounded-xl font-bold text-sm text-white bg-zinc-900/90 hover:bg-zinc-800 border border-white/15 transition flex items-center justify-center gap-2 hover:border-niners-yellow">
-              <i class="fa-solid fa-location-dot text-niners-yellow"></i>
+            <a href="#branches" class="w-full sm:w-auto px-7 py-4 rounded-xl font-bold text-sm text-white bg-zinc-900/90 hover:bg-zinc-800 border border-white/15 transition flex items-center justify-center gap-2 hover:border-brand-yellow">
+              <i class="fa-solid fa-location-dot text-brand-yellow"></i>
               <span data-i18n="heroBtnBranches">Filiallarni Ko'rish</span>
             </a>
           </div>
@@ -238,7 +244,7 @@
               <div class="text-xs sm:text-sm text-zinc-400 mt-1" data-i18n="statStudents">Muvaffaqiyatli o'quvchilar</div>
             </div>
             <div>
-              <div class="text-3xl sm:text-4xl font-display font-extrabold text-niners-yellow">8.5 / 9.0</div>
+              <div class="text-3xl sm:text-4xl font-display font-extrabold text-brand-yellow">8.5 / 9.0</div>
               <div class="text-xs sm:text-sm text-zinc-400 mt-1" data-i18n="statIelts">Eng yuqori natijalar</div>
             </div>
             <div>
@@ -253,15 +259,15 @@
         <div class="lg:col-span-5 relative">
           <div class="relative mx-auto max-w-md lg:max-w-none">
             
-            <!-- Dark UIC Box with Yellow Accents -->
-            <div class="uic-card rounded-3xl bg-niners-card p-6 sm:p-8 backdrop-blur-2xl shadow-2xl relative overflow-hidden">
+            <!-- Dark UIC Box with Yellow Accents (Featuring Guaranteed Hover Lift) -->
+            <div class="transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover-lift-card uic-dark-card rounded-3xl bg-brand-cardDark p-6 sm:p-8 backdrop-blur-2xl shadow-2xl relative overflow-hidden">
               
               <!-- Subtle top corner yellow accent -->
-              <div class="absolute top-0 right-0 w-32 h-32 bg-niners-yellow/10 rounded-full blur-2xl pointer-events-none"></div>
+              <div class="absolute top-0 right-0 w-32 h-32 bg-brand-yellow/15 rounded-full blur-2xl pointer-events-none"></div>
 
               <div class="flex items-center justify-between pb-6 border-b border-white/10">
                 <div class="flex items-center gap-3.5">
-                  <div class="w-12 h-12 rounded-2xl bg-niners-yellow flex items-center justify-center text-black text-xl font-black shadow-md">
+                  <div class="w-12 h-12 rounded-2xl bg-brand-yellow flex items-center justify-center text-black text-xl font-black shadow-md">
                     <i class="fa-solid fa-comments"></i>
                   </div>
                   <div>
@@ -269,21 +275,21 @@
                     <p class="text-xs text-zinc-400" data-i18n="heroCardSub">AQSH va chet ellik spikerlar bilan</p>
                   </div>
                 </div>
-                <span class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-niners-yellow/20 text-niners-yellow border border-niners-yellow/40">
+                <span class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-brand-yellow/20 text-brand-yellow border border-brand-yellow/40">
                   REAL FLUENCY
                 </span>
               </div>
 
               <!-- Student Feedback Featurette -->
               <div class="py-6 space-y-4">
-                <div class="bg-black/60 rounded-2xl p-4 border border-white/10 flex items-start gap-3.5 hover:border-niners-yellow transition-colors">
-                  <div class="w-11 h-11 rounded-full bg-niners-yellow text-black font-display font-black flex items-center justify-center shrink-0 text-sm shadow">
+                <div class="bg-black/60 rounded-2xl p-4 border border-white/10 flex items-start gap-3.5 hover:border-brand-yellow transition-colors">
+                  <div class="w-11 h-11 rounded-full bg-brand-yellow text-black font-display font-black flex items-center justify-center shrink-0 text-sm shadow">
                     AM
                   </div>
                   <div class="space-y-1">
                     <div class="flex items-center justify-between">
                       <h4 class="text-sm font-bold text-white">Abdulaziz Maxmudov</h4>
-                      <span class="text-[11px] text-niners-yellow font-bold">1 yil o'qigan</span>
+                      <span class="text-[11px] text-brand-yellow font-bold">1 yil o'qigan</span>
                     </div>
                     <p class="text-xs text-zinc-300 leading-relaxed italic" data-i18n="heroAbdulazizQuote">
                       "Ninersda 1 yil o'qib, AQSH, Filippin va Misrdan kelgan native speakerlar bilan bemalol suhbatlasha oldim!"
@@ -292,14 +298,14 @@
                 </div>
 
                 <!-- Teacher Mentor Pill -->
-                <div class="bg-black/60 rounded-2xl p-4 border border-white/10 flex items-center justify-between hover:border-niners-yellow transition-colors">
+                <div class="bg-black/60 rounded-2xl p-4 border border-white/10 flex items-center justify-between hover:border-brand-yellow transition-colors">
                   <div class="flex items-center gap-3">
-                    <div class="w-11 h-11 rounded-full bg-zinc-800 border border-white/10 text-niners-yellow flex items-center justify-center font-black shrink-0">
+                    <div class="w-11 h-11 rounded-full bg-zinc-800 border border-white/10 text-brand-yellow flex items-center justify-center font-black shrink-0">
                       MW
                     </div>
                     <div>
                       <div class="text-sm font-bold text-white">Mr. Mirsaid</div>
-                      <div class="text-xs text-niners-yellow font-semibold">"Mr. Wise" • Senior Expert</div>
+                      <div class="text-xs text-brand-yellow font-semibold">"Mr. Wise" • Senior Expert</div>
                     </div>
                   </div>
                   <span class="text-[11px] bg-white/10 text-white font-bold px-2.5 py-1 rounded-lg">
@@ -309,12 +315,12 @@
               </div>
 
               <!-- Live Club Banner -->
-              <div class="bg-niners-yellow/10 rounded-2xl p-4 border border-niners-yellow/30 flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-niners-yellow text-black flex items-center justify-center text-sm font-black shrink-0">
+              <div class="bg-brand-yellow/10 rounded-2xl p-4 border border-brand-yellow/30 flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-yellow text-black flex items-center justify-center text-sm font-black shrink-0">
                   <i class="fa-solid fa-earth-americas"></i>
                 </div>
                 <div class="text-xs text-zinc-200">
-                  <span class="font-bold text-niners-yellow" data-i18n="speakingClubTitle">Har hafta jonli Speaking Club:</span>
+                  <span class="font-bold text-brand-yellow" data-i18n="speakingClubTitle">Har hafta jonli Speaking Club:</span>
                   <span data-i18n="speakingClubSub">AQSH va xalqaro spikerlar bilan jonli debatlar</span>
                 </div>
               </div>
@@ -322,8 +328,8 @@
             </div>
 
             <!-- Floating Micro Pill -->
-            <div class="absolute -bottom-5 -left-5 bg-niners-black border border-niners-yellow/60 px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 animate-float-gentle">
-              <div class="w-3 h-3 rounded-full bg-niners-yellow animate-ping"></div>
+            <div class="absolute -bottom-5 -left-5 bg-brand-black border border-brand-yellow/70 px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 animate-uic-float">
+              <div class="w-3 h-3 rounded-full bg-brand-yellow animate-ping"></div>
               <div class="text-xs">
                 <div class="font-bold text-white font-display" data-i18n="heroFloatTitle">Hozirda 45+ guruh</div>
                 <div class="text-zinc-400 text-[11px]" data-i18n="heroFloatSub">Qo'shilish uchun o'rinlar ochiq</div>
@@ -338,11 +344,11 @@
   </section>
 
   <!-- ================= ABOUT US / WHY CHOOSE US (UIC BENTO GRID) ================= -->
-  <section id="about" class="py-24 bg-niners-grayLight relative border-b border-zinc-200 bg-light-grid">
+  <section id="about" class="py-24 bg-brand-grayLight relative border-b border-zinc-200 bg-light-subtle-grid">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs uppercase font-extrabold tracking-widest text-niners-black bg-niners-yellow px-3 py-1 rounded-md" data-i18n="whyNinersTag">NIMA UCHUN NINERS?</span>
+        <span class="text-xs uppercase font-extrabold tracking-widest text-black bg-brand-yellow px-3.5 py-1.5 rounded-lg border border-black/10 shadow-sm" data-i18n="whyNinersTag">NIMA UCHUN NINERS?</span>
         <h2 class="mt-3 text-3xl sm:text-5xl font-display font-extrabold text-black" data-i18n="whyNinersTitle">
           Ingliz tilini o'rganishdagi eng ishonchli hamkoringiz
         </h2>
@@ -351,13 +357,13 @@
         </p>
       </div>
 
-      <!-- UIC Style Bento Grid -->
+      <!-- UIC Style Bento Grid with Guaranteed Hover Animations -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
         
         <!-- Bento 1 -->
-        <div class="uic-card-light bg-white rounded-3xl p-8 flex flex-col justify-between">
+        <div class="transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover-lift-card bg-white rounded-3xl p-8 flex flex-col justify-between border border-zinc-200">
           <div>
-            <div class="w-14 h-14 rounded-2xl bg-niners-yellow text-black flex items-center justify-center text-2xl mb-6 shadow-md">
+            <div class="w-14 h-14 rounded-2xl bg-brand-yellow text-black flex items-center justify-center text-2xl mb-6 shadow-md">
               <i class="fa-solid fa-earth-americas"></i>
             </div>
             <h3 class="text-xl font-bold font-display text-black mb-2.5" data-i18n="benefit1Title">Native Speaker Muloqotlari</h3>
@@ -366,15 +372,15 @@
             </p>
           </div>
           <div class="mt-6 pt-4 border-t border-zinc-100 flex items-center text-xs font-bold text-black">
-            <i class="fa-solid fa-check text-niners-yellow mr-2 text-sm"></i> 
+            <i class="fa-solid fa-check text-black mr-2 text-sm bg-brand-yellow p-1 rounded-full"></i> 
             <span data-i18n="benefit1Sub">Har hafta bepul club</span>
           </div>
         </div>
 
         <!-- Bento 2 -->
-        <div class="uic-card-light bg-white rounded-3xl p-8 flex flex-col justify-between">
+        <div class="transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover-lift-card bg-white rounded-3xl p-8 flex flex-col justify-between border border-zinc-200">
           <div>
-            <div class="w-14 h-14 rounded-2xl bg-black text-niners-yellow flex items-center justify-center text-2xl mb-6 shadow-md">
+            <div class="w-14 h-14 rounded-2xl bg-black text-brand-yellow flex items-center justify-center text-2xl mb-6 shadow-md">
               <i class="fa-solid fa-user-tie"></i>
             </div>
             <h3 class="text-xl font-bold font-display text-black mb-2.5" data-i18n="benefit2Title">Katta Tajribali Ustozlar</h3>
@@ -383,15 +389,15 @@
             </p>
           </div>
           <div class="mt-6 pt-4 border-t border-zinc-100 flex items-center text-xs font-bold text-black">
-            <i class="fa-solid fa-check text-niners-yellow mr-2 text-sm"></i> 
+            <i class="fa-solid fa-check text-black mr-2 text-sm bg-brand-yellow p-1 rounded-full"></i> 
             <span data-i18n="benefit2Sub">IELTS 8.5+ instruktorlar</span>
           </div>
         </div>
 
         <!-- Bento 3 -->
-        <div class="uic-card-light bg-white rounded-3xl p-8 flex flex-col justify-between">
+        <div class="transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover-lift-card bg-white rounded-3xl p-8 flex flex-col justify-between border border-zinc-200">
           <div>
-            <div class="w-14 h-14 rounded-2xl bg-niners-yellow text-black flex items-center justify-center text-2xl mb-6 shadow-md">
+            <div class="w-14 h-14 rounded-2xl bg-brand-yellow text-black flex items-center justify-center text-2xl mb-6 shadow-md">
               <i class="fa-solid fa-train-subway"></i>
             </div>
             <h3 class="text-xl font-bold font-display text-black mb-2.5" data-i18n="benefit3Title">Metroga Yaqin Filiallar</h3>
@@ -400,15 +406,15 @@
             </p>
           </div>
           <div class="mt-6 pt-4 border-t border-zinc-100 flex items-center text-xs font-bold text-black">
-            <i class="fa-solid fa-check text-niners-yellow mr-2 text-sm"></i> 
+            <i class="fa-solid fa-check text-black mr-2 text-sm bg-brand-yellow p-1 rounded-full"></i> 
             <span data-i18n="benefit3Sub">3 ta faol filial</span>
           </div>
         </div>
 
         <!-- Bento 4 -->
-        <div class="uic-card-light bg-white rounded-3xl p-8 flex flex-col justify-between">
+        <div class="transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover-lift-card bg-white rounded-3xl p-8 flex flex-col justify-between border border-zinc-200">
           <div>
-            <div class="w-14 h-14 rounded-2xl bg-black text-niners-yellow flex items-center justify-center text-2xl mb-6 shadow-md">
+            <div class="w-14 h-14 rounded-2xl bg-black text-brand-yellow flex items-center justify-center text-2xl mb-6 shadow-md">
               <i class="fa-solid fa-award"></i>
             </div>
             <h3 class="text-xl font-bold font-display text-black mb-2.5" data-i18n="benefit4Title">Kafolatlangan Natija</h3>
@@ -417,7 +423,7 @@
             </p>
           </div>
           <div class="mt-6 pt-4 border-t border-zinc-100 flex items-center text-xs font-bold text-black">
-            <i class="fa-solid fa-check text-niners-yellow mr-2 text-sm"></i> 
+            <i class="fa-solid fa-check text-black mr-2 text-sm bg-brand-yellow p-1 rounded-full"></i> 
             <span data-i18n="benefit4Sub">Shaxsiy mentorlik</span>
           </div>
         </div>
@@ -428,12 +434,12 @@
   </section>
 
   <!-- ================= COURSES SECTION (UIC GROUP HOVER-REVEAL CARDS) ================= -->
-  <section id="courses" class="py-24 bg-niners-black text-white relative bg-grid-pattern">
+  <section id="courses" class="py-24 bg-brand-black text-white relative bg-tech-grid">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
         <div>
-          <span class="text-xs uppercase font-extrabold tracking-widest text-niners-yellow" data-i18n="coursesTag">O'quv Dasturlari</span>
+          <span class="text-xs uppercase font-extrabold tracking-widest text-brand-yellow" data-i18n="coursesTag">O'quv Dasturlari</span>
           <h2 class="mt-2 text-3xl sm:text-5xl font-display font-extrabold text-white" data-i18n="coursesTitle">
             Maqsadingizga mos kursni tanlang
           </h2>
@@ -441,7 +447,7 @@
             Boshlang'ich darajadan to xalqaro IELTS sertifikatigacha bo'lgan bosqichma-bosqich tizimli ta'lim.
           </p>
         </div>
-        <a href="#register" class="btn-uic-yellow inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black">
+        <a href="#register" class="btn-yellow-primary inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black">
           <span data-i18n="allCoursesConsult">Individual Maslahat Olish</span>
           <i class="fa-solid fa-chevron-right text-[10px]"></i>
         </a>
@@ -449,134 +455,134 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <!-- Course 1: General English -->
-        <div class="uic-card rounded-3xl bg-niners-card p-8 flex flex-col justify-between group">
+        <!-- Course 1: General English (With Guaranteed Hover Card Lift) -->
+        <div class="transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover-lift-card uic-dark-card rounded-3xl bg-brand-cardDark p-8 flex flex-col justify-between group">
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-white/10 text-white border border-white/10">
                 Beginner - Advanced
               </span>
               <span class="text-zinc-400 text-xs flex items-center gap-1.5 font-medium">
-                <i class="fa-regular fa-clock text-niners-yellow"></i> 3 oy / bosqich
+                <i class="fa-regular fa-clock text-brand-yellow"></i> 3 oy / bosqich
               </span>
             </div>
             
-            <h3 class="text-2xl font-bold font-display text-white mb-3 group-hover:text-niners-yellow transition-colors" data-i18n="c1Title">General English</h3>
+            <h3 class="text-2xl font-bold font-display text-white mb-3 group-hover:text-brand-yellow transition-colors" data-i18n="c1Title">General English</h3>
             <p class="text-sm text-zinc-300 mb-6 leading-relaxed" data-i18n="c1Desc">
               Grammatika, so'z boyligi, to'g'ri talaffuz va kundalik nutq ravonligini bosqichma-bosqich shakllantiruvchi kompleks kurs.
             </p>
 
             <ul class="space-y-3.5 text-xs sm:text-sm text-zinc-300 mb-8">
               <li class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-niners-yellow"></i>
+                <i class="fa-solid fa-check text-brand-yellow"></i>
                 <span data-i18n="c1f1">Haftada 3 kun 1.5 soatdan asosiy dars</span>
               </li>
               <li class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-niners-yellow"></i>
+                <i class="fa-solid fa-check text-brand-yellow"></i>
                 <span data-i18n="c1f2">Har shanba bepul Speaking Club & Mock</span>
               </li>
               <li class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-niners-yellow"></i>
+                <i class="fa-solid fa-check text-brand-yellow"></i>
                 <span data-i18n="c1f3">Barcha darsliklar va audio materiallar bepul</span>
               </li>
               <li class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-niners-yellow"></i>
+                <i class="fa-solid fa-check text-brand-yellow"></i>
                 <span data-i18n="c1f4">Uy vazifalarini nazorat qiluvchi shaxsiy kurator</span>
               </li>
             </ul>
           </div>
 
-          <button onclick="selectCourseAndEnroll('General English')" class="w-full py-3.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider bg-zinc-800 hover:bg-niners-yellow hover:text-black text-white transition duration-300 flex items-center justify-center gap-2">
+          <button onclick="selectCourseAndEnroll('General English')" class="w-full py-3.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider bg-zinc-800 hover:bg-brand-yellow hover:text-black text-white transition duration-300 flex items-center justify-center gap-2">
             <span data-i18n="courseEnrollBtn">Kursga yozilish</span>
             <i class="fa-solid fa-arrow-right text-xs"></i>
           </button>
         </div>
 
-        <!-- Course 2: IELTS Intensive (Featured with Signature Yellow Border) -->
-        <div class="uic-card rounded-3xl bg-niners-dark border-2 border-niners-yellow p-8 flex flex-col justify-between relative shadow-2xl shadow-niners-yellow/10 group">
-          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-niners-yellow text-black font-extrabold text-[11px] uppercase tracking-wider px-5 py-1 rounded-full shadow-md">
+        <!-- Course 2: IELTS Intensive (Popular Featured with Yellow Accent & Guaranteed Hover Lift) -->
+        <div class="transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover-lift-card uic-dark-card rounded-3xl bg-brand-charcoal border-2 border-brand-yellow p-8 flex flex-col justify-between relative shadow-2xl shadow-brand-yellow/15 group">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-yellow text-black font-black text-[11px] uppercase tracking-wider px-5 py-1 rounded-full shadow-md">
             Eng Ko'p Tanlanadigan
           </div>
 
           <div>
             <div class="flex items-center justify-between mb-6 mt-2">
-              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-niners-yellow/20 text-niners-yellow border border-niners-yellow/40">
+              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-brand-yellow/20 text-brand-yellow border border-brand-yellow/40">
                 Target 7.0 - 8.5+
               </span>
               <span class="text-zinc-400 text-xs flex items-center gap-1.5 font-medium">
-                <i class="fa-regular fa-clock text-niners-yellow"></i> 2 - 4 oy
+                <i class="fa-regular fa-clock text-brand-yellow"></i> 2 - 4 oy
               </span>
             </div>
             
-            <h3 class="text-2xl font-bold font-display text-white mb-3 group-hover:text-niners-yellow transition-colors" data-i18n="c2Title">IELTS Intensive & Mastery</h3>
+            <h3 class="text-2xl font-bold font-display text-white mb-3 group-hover:text-brand-yellow transition-colors" data-i18n="c2Title">IELTS Intensive & Mastery</h3>
             <p class="text-sm text-zinc-300 mb-6 leading-relaxed" data-i18n="c2Desc">
               Listening, Reading, Writing va Speaking bo'yicha maxsus strategiyalar. Real imtihon formatidagi professional tayyorgarlik.
             </p>
 
             <ul class="space-y-3.5 text-xs sm:text-sm text-zinc-300 mb-8">
               <li class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-niners-yellow font-bold"></i>
+                <i class="fa-solid fa-check text-brand-yellow font-bold"></i>
                 <span data-i18n="c2f1">Mr. Wise va Top Masterlar nazorati</span>
               </li>
               <li class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-niners-yellow font-bold"></i>
+                <i class="fa-solid fa-check text-brand-yellow font-bold"></i>
                 <span data-i18n="c2f2">Haftalik haqiqiy IELTS Mock Testlar</span>
               </li>
               <li class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-niners-yellow font-bold"></i>
+                <i class="fa-solid fa-check text-brand-yellow font-bold"></i>
                 <span data-i18n="c2f3">Writing Task 1 & 2 uchun chuqur tahlil</span>
               </li>
               <li class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-niners-yellow font-bold"></i>
+                <i class="fa-solid fa-check text-brand-yellow font-bold"></i>
                 <span data-i18n="c2f4">1-on-1 individual Speaking intervyulari</span>
               </li>
             </ul>
           </div>
 
-          <button onclick="selectCourseAndEnroll('IELTS Intensive')" class="btn-uic-yellow w-full py-4 px-4 rounded-xl font-bold text-xs uppercase tracking-wider text-black flex items-center justify-center gap-2">
+          <button onclick="selectCourseAndEnroll('IELTS Intensive')" class="btn-yellow-primary w-full py-4 px-4 rounded-xl font-black text-xs uppercase tracking-wider text-black flex items-center justify-center gap-2">
             <span data-i18n="courseEnrollBtn">Kursga yozilish</span>
             <i class="fa-solid fa-arrow-right text-xs"></i>
           </button>
         </div>
 
-        <!-- Course 3: Speaking Mastery & Native Lab -->
-        <div class="uic-card rounded-3xl bg-niners-card p-8 flex flex-col justify-between group">
+        <!-- Course 3: Speaking Club & Native Lab (With Guaranteed Hover Lift) -->
+        <div class="transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover-lift-card uic-dark-card rounded-3xl bg-brand-cardDark p-8 flex flex-col justify-between group">
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-white/10 text-white border border-white/10">
                 Fluency & Native Accent
               </span>
               <span class="text-zinc-400 text-xs flex items-center gap-1.5 font-medium">
-                <i class="fa-regular fa-clock text-niners-yellow"></i> Doimiy amaliyot
+                <i class="fa-regular fa-clock text-brand-yellow"></i> Doimiy amaliyot
               </span>
             </div>
             
-            <h3 class="text-2xl font-bold font-display text-white mb-3 group-hover:text-niners-yellow transition-colors" data-i18n="c3Title">Speaking Club & Native Lab</h3>
+            <h3 class="text-2xl font-bold font-display text-white mb-3 group-hover:text-brand-yellow transition-colors" data-i18n="c3Title">Speaking Club & Native Lab</h3>
             <p class="text-sm text-zinc-300 mb-6 leading-relaxed" data-i18n="c3Desc">
               Til to'sig'ini butunlay yengish uchun AQSH, Filippin va xorijiy ekspertlar bilan to'g'ridan-to'g'ri debatlar va jonli muloqot.
             </p>
 
             <ul class="space-y-3.5 text-xs sm:text-sm text-zinc-300 mb-8">
               <li class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-niners-yellow"></i>
+                <i class="fa-solid fa-check text-brand-yellow"></i>
                 <span data-i18n="c3f1">Har xil davlat vakillari bilan muloqot</span>
               </li>
               <li class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-niners-yellow"></i>
+                <i class="fa-solid fa-check text-brand-yellow"></i>
                 <span data-i18n="c3f2">Debatlar, taqdimotlar va public speaking</span>
               </li>
               <li class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-niners-yellow"></i>
+                <i class="fa-solid fa-check text-brand-yellow"></i>
                 <span data-i18n="c3f3">Qo'rquv va til to'sig'ini sindirish kafolati</span>
               </li>
               <li class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-niners-yellow"></i>
+                <i class="fa-solid fa-check text-brand-yellow"></i>
                 <span data-i18n="c3f4">Zamonaviy idiomalar va slanglar tahlili</span>
               </li>
             </ul>
           </div>
 
-          <button onclick="selectCourseAndEnroll('Speaking Club & Native Lab')" class="w-full py-3.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider bg-zinc-800 hover:bg-niners-yellow hover:text-black text-white transition duration-300 flex items-center justify-center gap-2">
+          <button onclick="selectCourseAndEnroll('Speaking Club & Native Lab')" class="w-full py-3.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider bg-zinc-800 hover:bg-brand-yellow hover:text-black text-white transition duration-300 flex items-center justify-center gap-2">
             <span data-i18n="courseEnrollBtn">Kursga yozilish</span>
             <i class="fa-solid fa-arrow-right text-xs"></i>
           </button>
@@ -587,12 +593,35 @@
     </div>
   </section>
 
+  <!-- ================= PRICING SECTION (TARIFLAR VA PAKETLAR) ================= -->
+  <section id="pricing" class="py-24 bg-brand-charcoal text-white relative border-b border-white/10 bg-tech-dots">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-black bg-brand-yellow px-3.5 py-1.5 rounded-lg border border-black/10 shadow-sm">
+          TARIFLAR VA PAKETLAR
+        </span>
+        <h2 class="mt-3 text-3xl sm:text-5xl font-display font-extrabold text-white">
+          Shaffof va Qulay Ta'lim Narxlari
+        </h2>
+        <p class="mt-4 text-zinc-400 text-sm sm:text-base">
+          Har bir o'quvchining darajasi va maqsadiga moslashtirilgan oylik va to'liq kurs paketlari.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="pricing-cards-container">
+        <!-- Dynamically rendered and updated live via cms.js -->
+      </div>
+
+    </div>
+  </section>
+
   <!-- ================= BRANCHES SECTION (FILIALLAR TARMOG'I) ================= -->
   <section id="branches" class="py-24 bg-white relative border-b border-zinc-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs uppercase font-extrabold tracking-widest text-niners-black bg-niners-yellow px-3 py-1 rounded-md" data-i18n="branchesTag">Filiallar Tarmog'i</span>
+        <span class="text-xs uppercase font-extrabold tracking-widest text-black bg-brand-yellow px-3.5 py-1.5 rounded-lg border border-black/10 shadow-sm" data-i18n="branchesTag">Filiallar Tarmog'i</span>
         <h2 class="mt-3 text-3xl sm:text-5xl font-display font-extrabold text-black" data-i18n="branchesTitle">
           Toshkent bo'ylab sizga eng yaqin Niners filiali
         </h2>
@@ -603,17 +632,17 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <!-- Branch 1: Shayxontohur / Beruniy -->
-        <div class="uic-card-light bg-niners-grayLight rounded-3xl p-8 flex flex-col justify-between group">
+        <!-- Branch 1: Shayxontohur / Beruniy (With Guaranteed Hover Lift) -->
+        <div class="transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover-lift-card bg-brand-grayLight rounded-3xl p-8 flex flex-col justify-between border border-zinc-200 group">
           <div>
             <div class="flex items-center justify-between mb-5">
-              <span class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-niners-yellow text-black flex items-center gap-1.5">
+              <span class="px-3.5 py-1.5 rounded-full text-xs font-black bg-brand-yellow text-black flex items-center gap-1.5">
                 <i class="fa-solid fa-train-subway"></i> Beruniy Metro
               </span>
-              <span class="text-xs font-bold text-zinc-400">FILIAL 01</span>
+              <span class="text-xs font-black text-zinc-400">FILIAL 01</span>
             </div>
 
-            <h3 class="text-2xl font-bold font-display text-black mb-3 group-hover:text-niners-yellow transition-colors" data-i18n="branch1Name">
+            <h3 class="text-2xl font-bold font-display text-black mb-3 group-hover:text-black transition-colors" data-i18n="branch1Name">
               Shayxontohur Filiali (Beruniy)
             </h3>
             
@@ -622,9 +651,9 @@
               <span data-i18n="branch1Address">Shayxontohur tumani, Qoʻrgʻoncha koʻchasi, 149-uy</span>
             </p>
 
-            <div class="bg-white rounded-2xl p-4 text-xs text-zinc-700 mb-6 border border-zinc-200/80 space-y-2">
+            <div class="bg-white rounded-2xl p-4 text-xs text-zinc-700 mb-6 border border-zinc-200 space-y-2">
               <div class="flex items-center gap-2">
-                <i class="fa-solid fa-landmark text-niners-yellow"></i>
+                <i class="fa-solid fa-landmark text-brand-yellow bg-black p-1 rounded"></i>
                 <span data-i18n="branch1Landmark">Mo'ljal: Ipakchilik instituti & Beruniy metro bekati</span>
               </div>
               <div class="flex items-center gap-2">
@@ -636,27 +665,27 @@
 
           <div class="space-y-3 pt-4 border-t border-zinc-200">
             <a href="tel:+998951468180" class="w-full py-3.5 px-4 rounded-xl bg-black hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition">
-              <i class="fa-solid fa-phone text-niners-yellow"></i>
+              <i class="fa-solid fa-phone text-brand-yellow"></i>
               <span>+998 95 146 8180</span>
             </a>
             
-            <button onclick="selectBranchAndEnroll('Shayxontohur (Beruniy)')" class="w-full py-3 px-4 rounded-xl border border-zinc-300 hover:border-black hover:bg-black hover:text-white text-zinc-800 font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5">
+            <button onclick="selectBranchAndEnroll('Shayxontohur (Beruniy)')" class="w-full py-3 px-4 rounded-xl border border-zinc-300 hover:border-black hover:bg-black hover:text-white text-zinc-800 font-black text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5">
               <span data-i18n="branchSelectBtn">Ushbu filialga yozilish</span>
             </button>
           </div>
         </div>
 
-        <!-- Branch 2: Ehtirom / Novza -->
-        <div class="uic-card-light bg-niners-grayLight rounded-3xl p-8 flex flex-col justify-between group">
+        <!-- Branch 2: Ehtirom / Novza (With Guaranteed Hover Lift) -->
+        <div class="transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover-lift-card bg-brand-grayLight rounded-3xl p-8 flex flex-col justify-between border border-zinc-200 group">
           <div>
             <div class="flex items-center justify-between mb-5">
-              <span class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-niners-yellow text-black flex items-center gap-1.5">
+              <span class="px-3.5 py-1.5 rounded-full text-xs font-black bg-brand-yellow text-black flex items-center gap-1.5">
                 <i class="fa-solid fa-train-subway"></i> Novza Metro
               </span>
-              <span class="text-xs font-bold text-zinc-400">FILIAL 02</span>
+              <span class="text-xs font-black text-zinc-400">FILIAL 02</span>
             </div>
 
-            <h3 class="text-2xl font-bold font-display text-black mb-3 group-hover:text-niners-yellow transition-colors" data-i18n="branch2Name">
+            <h3 class="text-2xl font-bold font-display text-black mb-3 group-hover:text-black transition-colors" data-i18n="branch2Name">
               Chilonzor Filiali (Novza)
             </h3>
             
@@ -665,9 +694,9 @@
               <span data-i18n="branch2Address">Ehtirom koʻchasi, 3-3A uy</span>
             </p>
 
-            <div class="bg-white rounded-2xl p-4 text-xs text-zinc-700 mb-6 border border-zinc-200/80 space-y-2">
+            <div class="bg-white rounded-2xl p-4 text-xs text-zinc-700 mb-6 border border-zinc-200 space-y-2">
               <div class="flex items-center gap-2">
-                <i class="fa-solid fa-landmark text-niners-yellow"></i>
+                <i class="fa-solid fa-landmark text-brand-yellow bg-black p-1 rounded"></i>
                 <span data-i18n="branch2Landmark">Mo'ljal: Novza metro bekati yaqinida</span>
               </div>
               <div class="flex items-center gap-2">
@@ -679,27 +708,27 @@
 
           <div class="space-y-3 pt-4 border-t border-zinc-200">
             <a href="tel:+998951466160" class="w-full py-3.5 px-4 rounded-xl bg-black hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition">
-              <i class="fa-solid fa-phone text-niners-yellow"></i>
+              <i class="fa-solid fa-phone text-brand-yellow"></i>
               <span>+998 95 146 6160</span>
             </a>
             
-            <button onclick="selectBranchAndEnroll('Chilonzor (Novza)')" class="w-full py-3 px-4 rounded-xl border border-zinc-300 hover:border-black hover:bg-black hover:text-white text-zinc-800 font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5">
+            <button onclick="selectBranchAndEnroll('Chilonzor (Novza)')" class="w-full py-3 px-4 rounded-xl border border-zinc-300 hover:border-black hover:bg-black hover:text-white text-zinc-800 font-black text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5">
               <span data-i18n="branchSelectBtn">Ushbu filialga yozilish</span>
             </button>
           </div>
         </div>
 
-        <!-- Branch 3: Farobiy & Yunusobod -->
-        <div class="uic-card-light bg-niners-grayLight rounded-3xl p-8 flex flex-col justify-between group">
+        <!-- Branch 3: Farobiy & Yunusobod (With Guaranteed Hover Lift) -->
+        <div class="transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover-lift-card bg-brand-grayLight rounded-3xl p-8 flex flex-col justify-between border border-zinc-200 group">
           <div>
             <div class="flex items-center justify-between mb-5">
-              <span class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-niners-yellow text-black flex items-center gap-1.5">
+              <span class="px-3.5 py-1.5 rounded-full text-xs font-black bg-brand-yellow text-black flex items-center gap-1.5">
                 <i class="fa-solid fa-building"></i> Farobiy & Yunusobod
               </span>
-              <span class="text-xs font-bold text-zinc-400">FILIAL 03</span>
+              <span class="text-xs font-black text-zinc-400">FILIAL 03</span>
             </div>
 
-            <h3 class="text-2xl font-bold font-display text-black mb-3 group-hover:text-niners-yellow transition-colors" data-i18n="branch3Name">
+            <h3 class="text-2xl font-bold font-display text-black mb-3 group-hover:text-black transition-colors" data-i18n="branch3Name">
               Farobiy & Yunusobod Filiali
             </h3>
             
@@ -708,9 +737,9 @@
               <span data-i18n="branch3Address">Farobiy koʻchasi, 28/4-uy hamda Yunusobod hududi</span>
             </p>
 
-            <div class="bg-white rounded-2xl p-4 text-xs text-zinc-700 mb-6 border border-zinc-200/80 space-y-2">
+            <div class="bg-white rounded-2xl p-4 text-xs text-zinc-700 mb-6 border border-zinc-200 space-y-2">
               <div class="flex items-center gap-2">
-                <i class="fa-solid fa-landmark text-niners-yellow"></i>
+                <i class="fa-solid fa-landmark text-brand-yellow bg-black p-1 rounded"></i>
                 <span data-i18n="branch3Landmark">Mo'ljal: Katta transport yo'nalishlari tutashuvi</span>
               </div>
               <div class="flex items-center gap-2">
@@ -722,11 +751,11 @@
 
           <div class="space-y-3 pt-4 border-t border-zinc-200">
             <a href="tel:+998951468180" class="w-full py-3.5 px-4 rounded-xl bg-black hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition">
-              <i class="fa-solid fa-phone text-niners-yellow"></i>
+              <i class="fa-solid fa-phone text-brand-yellow"></i>
               <span>+998 95 146 8180</span>
             </a>
             
-            <button onclick="selectBranchAndEnroll('Farobiy & Yunusobod')" class="w-full py-3 px-4 rounded-xl border border-zinc-300 hover:border-black hover:bg-black hover:text-white text-zinc-800 font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5">
+            <button onclick="selectBranchAndEnroll('Farobiy & Yunusobod')" class="w-full py-3 px-4 rounded-xl border border-zinc-300 hover:border-black hover:bg-black hover:text-white text-zinc-800 font-black text-xs uppercase tracking-wider transition flex items-center justify-center gap-1.5">
               <span data-i18n="branchSelectBtn">Ushbu filialga yozilish</span>
             </button>
           </div>
@@ -738,12 +767,12 @@
   </section>
 
   <!-- ================= STUDENT REVIEWS, STORIES & INSTRUCTORS ================= -->
-  <section id="reviews" class="py-24 bg-niners-black text-white relative overflow-hidden bg-dot-pattern">
+  <section id="reviews" class="py-24 bg-brand-black text-white relative overflow-hidden bg-tech-dots">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs uppercase font-extrabold tracking-widest text-niners-yellow" data-i18n="reviewsTag">Haqiqiy Fikrlar va Tajriba</span>
+        <span class="text-xs uppercase font-extrabold tracking-widest text-brand-yellow" data-i18n="reviewsTag">Haqiqiy Fikrlar va Tajriba</span>
         <h2 class="mt-2 text-3xl sm:text-5xl font-display font-extrabold text-white" data-i18n="reviewsTitle">
           O'quvchilarimiz qanday natijaga erishmoqda?
         </h2>
@@ -752,18 +781,18 @@
         </p>
       </div>
 
-      <!-- Testimonials Grid -->
+      <!-- Testimonials Grid with Guaranteed Hover Animations -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
         
         <!-- FEATURED TESTIMONIAL: Abdulaziz Maxmudov -->
-        <div class="md:col-span-2 uic-card rounded-3xl bg-niners-card p-8 sm:p-10 border border-white/10 flex flex-col justify-between">
+        <div class="md:col-span-2 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover-lift-card uic-dark-card rounded-3xl bg-brand-cardDark p-8 sm:p-10 border border-white/10 flex flex-col justify-between">
           <div>
             <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
-              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-niners-yellow text-black">
+              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black bg-brand-yellow text-black">
                 <i class="fa-solid fa-quote-left"></i>
                 <span data-i18n="reviewVerified">Tasdiqlangan O'quvchi Fikri</span>
               </span>
-              <div class="flex text-niners-yellow text-sm gap-1">
+              <div class="flex text-brand-yellow text-sm gap-1">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -780,7 +809,7 @@
 
           <div class="flex items-center justify-between pt-6 border-t border-white/10">
             <div class="flex items-center gap-4">
-              <div class="w-14 h-14 rounded-2xl bg-niners-yellow text-black font-display font-black text-xl flex items-center justify-center shadow-lg">
+              <div class="w-14 h-14 rounded-2xl bg-brand-yellow text-black font-display font-black text-xl flex items-center justify-center shadow-lg">
                 AM
               </div>
               <div>
@@ -791,23 +820,23 @@
 
             <div class="hidden sm:block text-right">
               <div class="text-xs text-zinc-400 font-medium">Nutq Darajasi:</div>
-              <div class="text-sm font-bold text-niners-yellow font-display">Fluent & Native-like</div>
+              <div class="text-sm font-bold text-brand-yellow font-display">Fluent & Native-like</div>
             </div>
           </div>
         </div>
 
         <!-- Student Review 2: IELTS Success Story -->
-        <div class="uic-card rounded-3xl bg-niners-card p-8 border border-white/10 flex flex-col justify-between">
+        <div class="transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover-lift-card uic-dark-card rounded-3xl bg-brand-cardDark p-8 border border-white/10 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <div class="flex text-niners-yellow text-xs gap-1">
+              <div class="flex text-brand-yellow text-xs gap-1">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
               </div>
-              <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-niners-yellow">IELTS 8.0</span>
+              <span class="text-xs font-black px-3 py-1 rounded-full bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/30">IELTS 8.0</span>
             </div>
 
             <p class="text-sm text-zinc-300 leading-relaxed italic mb-6" data-i18n="review2Quote">
@@ -831,7 +860,7 @@
       <!-- ================= TEACHERS SHOWCASE ================= -->
       <div id="teachers" class="pt-6">
         <div class="text-center max-w-2xl mx-auto mb-12">
-          <span class="text-xs uppercase font-extrabold tracking-widest text-niners-yellow" data-i18n="teachersTag">Professional Jamoa</span>
+          <span class="text-xs uppercase font-extrabold tracking-widest text-brand-yellow" data-i18n="teachersTag">Professional Jamoa</span>
           <h2 class="mt-2 text-3xl font-display font-extrabold text-white" data-i18n="teachersTitle">
             Sizga ta'lim beradigan ustozlar
           </h2>
@@ -839,24 +868,24 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           
-          <!-- Teacher 1: Mr. Mirsaid ("Mr. Wise") -->
-          <div class="uic-card rounded-3xl bg-niners-card p-8 border border-white/10 flex flex-col sm:flex-row items-center gap-6">
+          <!-- Teacher 1: Mr. Mirsaid ("Mr. Wise") (With Guaranteed Hover Lift) -->
+          <div class="transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover-lift-card uic-dark-card rounded-3xl bg-brand-cardDark p-8 border border-white/10 flex flex-col sm:flex-row items-center gap-6">
             <div class="relative shrink-0">
-              <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-zinc-900 text-niners-yellow flex items-center justify-center font-display font-black text-3xl border-2 border-niners-yellow shadow-xl">
+              <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-zinc-900 text-brand-yellow flex items-center justify-center font-display font-black text-3xl border-2 border-brand-yellow shadow-xl">
                 MM
               </div>
-              <span class="absolute -bottom-2 -right-2 bg-niners-yellow text-black font-extrabold text-[10px] px-2.5 py-0.5 rounded-full shadow">
+              <span class="absolute -bottom-2 -right-2 bg-brand-yellow text-black font-black text-[10px] px-2.5 py-0.5 rounded-full shadow">
                 WISE
               </span>
             </div>
 
             <div class="space-y-2 text-center sm:text-left">
-              <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full text-xs font-bold bg-niners-yellow/10 text-niners-yellow border border-niners-yellow/30">
-                <i class="fa-solid fa-crown text-niners-yellow"></i>
+              <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full text-xs font-bold bg-brand-yellow/10 text-brand-yellow border border-brand-yellow/30">
+                <i class="fa-solid fa-crown text-brand-yellow"></i>
                 <span data-i18n="mrWiseNick">Taniqli Ekspert Ustoz</span>
               </div>
               <h3 class="text-2xl font-bold font-display text-white">
-                Mr. Mirsaid <span class="text-niners-yellow font-semibold text-lg">("Mr. Wise")</span>
+                Mr. Mirsaid <span class="text-brand-yellow font-semibold text-lg">("Mr. Wise")</span>
               </h3>
               <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed" data-i18n="mrWiseDesc">
                 O'quvchilar orasida o'zining chuqur falsafiy yondashuvi, sodda tushuntirish uslubi va IELTS imtihonidagi nozik sirlarni ochib berishi bilan tanilgan usta pedagog.
@@ -869,20 +898,20 @@
             </div>
           </div>
 
-          <!-- Native Speaker Mentors -->
-          <div class="uic-card rounded-3xl bg-niners-card p-8 border border-white/10 flex flex-col sm:flex-row items-center gap-6">
+          <!-- Native Speaker Mentors (With Guaranteed Hover Lift) -->
+          <div class="transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover-lift-card uic-dark-card rounded-3xl bg-brand-cardDark p-8 border border-white/10 flex flex-col sm:flex-row items-center gap-6">
             <div class="relative shrink-0">
               <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-zinc-900 text-white flex items-center justify-center font-display font-black text-3xl border-2 border-white/30 shadow-xl">
                 NS
               </div>
-              <span class="absolute -bottom-2 -right-2 bg-white text-black font-extrabold text-[10px] px-2.5 py-0.5 rounded-full shadow">
+              <span class="absolute -bottom-2 -right-2 bg-white text-black font-black text-[10px] px-2.5 py-0.5 rounded-full shadow">
                 NATIVE
               </span>
             </div>
 
             <div class="space-y-2 text-center sm:text-left">
               <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full text-xs font-bold bg-white/10 text-white border border-white/20">
-                <i class="fa-solid fa-earth-americas text-niners-yellow"></i>
+                <i class="fa-solid fa-earth-americas text-brand-yellow"></i>
                 <span data-i18n="nativeSpeakersTag">Xalqaro Mehmon Ustozlar</span>
               </div>
               <h3 class="text-2xl font-bold font-display text-white" data-i18n="nativeSpeakersTitle">
@@ -903,11 +932,11 @@
         <!-- ================= SPECIAL HIGHLIGHT: MR. ABDULBOSIT (EXCLUSIVE GLOWING YELLOW-BLACK CARD) ================= -->
         <div class="relative mt-8">
           
-          <!-- Outer Pulsing Glow -->
-          <div class="abdulbosit-glowing-card relative rounded-3xl bg-niners-dark border-2 border-niners-yellow p-8 sm:p-12 text-white shadow-2xl overflow-hidden">
+          <!-- Outer Pulsing Glow Card -->
+          <div class="abdulbosit-glowing-card relative rounded-3xl bg-brand-charcoal border-2 border-brand-yellow p-8 sm:p-12 text-white shadow-2xl overflow-hidden">
             
             <!-- Background Radial Glow -->
-            <div class="absolute -top-20 -right-20 w-80 h-80 bg-niners-yellow/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -top-20 -right-20 w-80 h-80 bg-brand-yellow/20 rounded-full blur-3xl pointer-events-none"></div>
 
             <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
               
@@ -915,23 +944,23 @@
               <div class="flex flex-col sm:flex-row items-center gap-7 text-center sm:text-left">
                 
                 <div class="relative shrink-0">
-                  <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-3xl bg-niners-yellow p-1 shadow-2xl">
+                  <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-3xl bg-brand-yellow p-1 shadow-2xl">
                     <div class="w-full h-full bg-black rounded-[22px] flex flex-col items-center justify-center relative overflow-hidden">
-                      <span class="font-display font-black text-4xl sm:text-5xl text-niners-yellow">
+                      <span class="font-display font-black text-4xl sm:text-5xl text-brand-yellow">
                         AB
                       </span>
                       <span class="text-[9px] font-extrabold text-zinc-400 uppercase tracking-widest mt-1">MASTER</span>
                     </div>
                   </div>
                   
-                  <div class="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-niners-yellow text-black flex items-center justify-center font-black text-lg shadow-xl border-2 border-black">
+                  <div class="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-brand-yellow text-black flex items-center justify-center font-black text-lg shadow-xl border-2 border-black">
                     <i class="fa-solid fa-trophy text-sm"></i>
                   </div>
                 </div>
 
                 <div class="space-y-3">
                   <!-- Exclusive Glowing Yellow Badge -->
-                  <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-black bg-niners-yellow text-black shadow-lg">
+                  <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-black bg-brand-yellow text-black shadow-lg">
                     <i class="fa-solid fa-star"></i>
                     <span data-i18n="abdulbositBadge">MARKAZNING ENG ZO'R VA TOP MASTER USTOZI</span>
                   </div>
@@ -940,7 +969,7 @@
                     MR. ABDULBOSIT
                   </h3>
 
-                  <p class="text-niners-yellow font-bold text-sm sm:text-base flex items-center justify-center sm:justify-start gap-2" data-i18n="abdulbositRole">
+                  <p class="text-brand-yellow font-bold text-sm sm:text-base flex items-center justify-center sm:justify-start gap-2" data-i18n="abdulbositRole">
                     <span>Absolute Best & Top Master Instructor</span>
                     <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
                     <span>Chief Academic Mentor</span>
@@ -957,7 +986,7 @@
               <div class="flex flex-col sm:flex-row lg:flex-col items-center gap-4 shrink-0 w-full lg:w-auto">
                 <div class="w-full sm:w-auto grid grid-cols-2 gap-3">
                   <div class="bg-black/80 border border-white/10 rounded-2xl p-4 text-center">
-                    <div class="text-2xl font-black text-niners-yellow font-display">9.0 Band</div>
+                    <div class="text-2xl font-black text-brand-yellow font-display">9.0 Band</div>
                     <div class="text-[11px] text-zinc-400 font-medium" data-i18n="abdulbositStat1">Metodika standarti</div>
                   </div>
                   <div class="bg-black/80 border border-white/10 rounded-2xl p-4 text-center">
@@ -966,7 +995,7 @@
                   </div>
                 </div>
 
-                <button onclick="enrollWithTeacher('Mr. Abdulbosit')" class="btn-uic-yellow w-full py-4 px-8 rounded-2xl font-extrabold text-xs uppercase tracking-wider text-black flex items-center justify-center gap-2.5">
+                <button onclick="enrollWithTeacher('Mr. Abdulbosit')" class="btn-yellow-primary w-full py-4 px-8 rounded-2xl font-black text-xs uppercase tracking-wider text-black flex items-center justify-center gap-2.5">
                   <i class="fa-solid fa-bolt text-black"></i>
                   <span data-i18n="abdulbositCta">Mr. Abdulbosit guruhiga yozilish</span>
                 </button>
@@ -990,7 +1019,7 @@
         
         <!-- Left: Form Explanation & Guarantees -->
         <div class="lg:col-span-5 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-niners-yellow text-black">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black bg-brand-yellow text-black">
             <i class="fa-solid fa-pen-fancy"></i>
             <span data-i18n="formPreTag">Qulay Ro'yxatdan O'tish</span>
           </div>
@@ -1006,7 +1035,7 @@
           <!-- Key Guarantees -->
           <div class="space-y-4 pt-2">
             <div class="flex items-start gap-3.5">
-              <div class="w-10 h-10 rounded-xl bg-niners-yellow text-black flex items-center justify-center shrink-0 shadow-sm font-bold">
+              <div class="w-10 h-10 rounded-xl bg-brand-yellow text-black flex items-center justify-center shrink-0 shadow-sm font-bold">
                 <i class="fa-solid fa-gift"></i>
               </div>
               <div>
@@ -1016,7 +1045,7 @@
             </div>
 
             <div class="flex items-start gap-3.5">
-              <div class="w-10 h-10 rounded-xl bg-black text-niners-yellow flex items-center justify-center shrink-0 shadow-sm font-bold">
+              <div class="w-10 h-10 rounded-xl bg-black text-brand-yellow flex items-center justify-center shrink-0 shadow-sm font-bold">
                 <i class="fa-solid fa-chart-pie"></i>
               </div>
               <div>
@@ -1026,7 +1055,7 @@
             </div>
 
             <div class="flex items-start gap-3.5">
-              <div class="w-10 h-10 rounded-xl bg-niners-yellow text-black flex items-center justify-center shrink-0 shadow-sm font-bold">
+              <div class="w-10 h-10 rounded-xl bg-brand-yellow text-black flex items-center justify-center shrink-0 shadow-sm font-bold">
                 <i class="fa-solid fa-shield-halved"></i>
               </div>
               <div>
@@ -1037,23 +1066,23 @@
           </div>
 
           <div class="pt-4 border-t border-zinc-200 flex items-center gap-4 text-xs font-semibold text-zinc-700">
-            <span class="flex items-center gap-1.5"><i class="fa-solid fa-phone text-niners-yellow"></i> +998 95 146 8180</span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-phone text-brand-yellow bg-black p-1 rounded"></i> +998 95 146 8180</span>
             <span>•</span>
-            <span class="flex items-center gap-1.5"><i class="fa-solid fa-phone text-niners-yellow"></i> +998 95 146 6160</span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-phone text-brand-yellow bg-black p-1 rounded"></i> +998 95 146 6160</span>
           </div>
 
         </div>
 
         <!-- Right: Registration Form Card -->
         <div class="lg:col-span-7">
-          <div class="uic-card-light bg-niners-grayLight rounded-3xl p-8 sm:p-10 border border-zinc-200 shadow-2xl relative overflow-hidden" id="form-container">
+          <div class="transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-2xl bg-brand-grayLight rounded-3xl p-8 sm:p-10 border border-zinc-200 shadow-xl relative overflow-hidden" id="form-container">
             
             <div class="flex items-center justify-between mb-8 pb-6 border-b border-zinc-200">
               <div>
                 <h3 class="text-2xl font-bold font-display text-black" data-i18n="formCardTitle">Ro'yxatdan O'tish</h3>
                 <p class="text-xs text-zinc-500" data-i18n="formCardSubtitle">Joylar soni chegaralangan</p>
               </div>
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-niners-yellow text-black flex items-center gap-1.5">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-brand-yellow text-black flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-black animate-pulse"></span>
                 <span data-i18n="formOnlineStatus">Qabul ochiq</span>
               </span>
@@ -1071,7 +1100,7 @@
                   <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-zinc-400">
                     <i class="fa-regular fa-user"></i>
                   </div>
-                  <input type="text" id="fullName" required placeholder="Masalan: Abdulaziz Maxmudov" class="w-full pl-11 pr-4 py-3.5 rounded-xl border border-zinc-300 focus:outline-none focus:border-black focus:ring-2 focus:ring-niners-yellow/50 text-sm text-black bg-white transition font-medium">
+                  <input type="text" id="fullName" required placeholder="Masalan: Abdulaziz Maxmudov" class="w-full pl-11 pr-4 py-3.5 rounded-xl border border-zinc-300 focus:outline-none focus:border-black focus:ring-2 focus:ring-brand-yellow/50 text-sm text-black bg-white transition font-medium">
                 </div>
               </div>
 
@@ -1084,7 +1113,7 @@
                   <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-zinc-400">
                     <i class="fa-solid fa-phone"></i>
                   </div>
-                  <input type="tel" id="phoneNumber" required placeholder="+998 90 123 45 67" class="w-full pl-11 pr-4 py-3.5 rounded-xl border border-zinc-300 focus:outline-none focus:border-black focus:ring-2 focus:ring-niners-yellow/50 text-sm text-black bg-white transition font-medium">
+                  <input type="tel" id="phoneNumber" required placeholder="+998 90 123 45 67" class="w-full pl-11 pr-4 py-3.5 rounded-xl border border-zinc-300 focus:outline-none focus:border-black focus:ring-2 focus:ring-brand-yellow/50 text-sm text-black bg-white transition font-medium">
                 </div>
               </div>
 
@@ -1100,7 +1129,7 @@
                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-zinc-400">
                       <i class="fa-solid fa-book-open"></i>
                     </div>
-                    <select id="courseSelect" required class="w-full pl-11 pr-8 py-3.5 rounded-xl border border-zinc-300 focus:outline-none focus:border-black focus:ring-2 focus:ring-niners-yellow/50 text-sm text-black bg-white transition appearance-none font-medium">
+                    <select id="courseSelect" required class="w-full pl-11 pr-8 py-3.5 rounded-xl border border-zinc-300 focus:outline-none focus:border-black focus:ring-2 focus:ring-brand-yellow/50 text-sm text-black bg-white transition appearance-none font-medium">
                       <option value="General English" data-i18n="optCourseGeneral">General English (Boshlang'ich - Ilg'or)</option>
                       <option value="IELTS Intensive" data-i18n="optCourseIelts">IELTS Intensive (Target 7.0 - 8.5+)</option>
                       <option value="Speaking Club & Native Lab" data-i18n="optCourseSpeaking">Speaking Club & Native Lab</option>
@@ -1122,7 +1151,7 @@
                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-zinc-400">
                       <i class="fa-solid fa-location-dot"></i>
                     </div>
-                    <select id="branchSelect" required class="w-full pl-11 pr-8 py-3.5 rounded-xl border border-zinc-300 focus:outline-none focus:border-black focus:ring-2 focus:ring-niners-yellow/50 text-sm text-black bg-white transition appearance-none font-medium">
+                    <select id="branchSelect" required class="w-full pl-11 pr-8 py-3.5 rounded-xl border border-zinc-300 focus:outline-none focus:border-black focus:ring-2 focus:ring-brand-yellow/50 text-sm text-black bg-white transition appearance-none font-medium">
                       <option value="Shayxontohur (Beruniy)" data-i18n="optBranch1">1-Filial: Shayxontohur (Beruniy metro)</option>
                       <option value="Chilonzor (Novza)" data-i18n="optBranch2">2-Filial: Chilonzor (Novza metro)</option>
                       <option value="Farobiy & Yunusobod" data-i18n="optBranch3">3-Filial: Farobiy & Yunusobod</option>
@@ -1144,7 +1173,7 @@
                   <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-zinc-400">
                     <i class="fa-solid fa-chalkboard-user"></i>
                   </div>
-                  <select id="teacherSelect" class="w-full pl-11 pr-8 py-3.5 rounded-xl border border-zinc-300 focus:outline-none focus:border-black focus:ring-2 focus:ring-niners-yellow/50 text-sm text-black bg-white transition appearance-none font-medium">
+                  <select id="teacherSelect" class="w-full pl-11 pr-8 py-3.5 rounded-xl border border-zinc-300 focus:outline-none focus:border-black focus:ring-2 focus:ring-brand-yellow/50 text-sm text-black bg-white transition appearance-none font-medium">
                     <option value="any" data-i18n="optTeacherAny">Eng mos bo'sh guruhga yo'naltirish</option>
                     <option value="Mr. Abdulbosit">⭐ MR. ABDULBOSIT (Top Master)</option>
                     <option value="Mr. Mirsaid">Mr. Mirsaid ("Mr. Wise")</option>
@@ -1158,7 +1187,7 @@
 
               <!-- Submit Button -->
               <div class="pt-2">
-                <button type="submit" id="submit-btn" class="btn-uic-yellow w-full py-4 px-6 rounded-xl font-extrabold text-xs uppercase tracking-wider text-black flex items-center justify-center gap-2 group">
+                <button type="submit" id="submit-btn" class="btn-yellow-primary w-full py-4 px-6 rounded-xl font-black text-xs uppercase tracking-wider text-black flex items-center justify-center gap-2 group">
                   <span id="submit-text" data-i18n="formSubmitBtn">Ariza Yuborish & Sinov Darsiga Yozilish</span>
                   <i class="fa-solid fa-paper-plane text-xs transition-transform group-hover:translate-x-1"></i>
                 </button>
@@ -1172,7 +1201,7 @@
 
             <!-- Success State -->
             <div id="form-success-state" class="hidden text-center py-12 px-4 space-y-5 animate-fade-in">
-              <div class="w-20 h-20 bg-niners-yellow text-black rounded-full flex items-center justify-center mx-auto text-4xl shadow-lg">
+              <div class="w-20 h-20 bg-brand-yellow text-black rounded-full flex items-center justify-center mx-auto text-4xl shadow-lg font-bold">
                 <i class="fa-solid fa-check"></i>
               </div>
               
@@ -1194,7 +1223,7 @@
                 </div>
                 <div class="flex justify-between">
                   <span class="text-zinc-500 font-medium">Tanlangan Kurs:</span>
-                  <span class="font-bold text-black bg-niners-yellow px-1.5 py-0.5 rounded" id="summary-course">-</span>
+                  <span class="font-bold text-black bg-brand-yellow px-1.5 py-0.5 rounded" id="summary-course">-</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-zinc-500 font-medium">Filial:</span>
@@ -1202,7 +1231,7 @@
                 </div>
               </div>
 
-              <button onclick="resetFormState()" class="px-6 py-2.5 rounded-xl border border-zinc-300 text-black font-bold text-xs uppercase tracking-wider hover:bg-zinc-100 transition">
+              <button onclick="resetFormState()" class="px-6 py-2.5 rounded-xl border border-zinc-300 text-black font-black text-xs uppercase tracking-wider hover:bg-zinc-100 transition">
                 <i class="fa-solid fa-rotate-right mr-1.5"></i>
                 <span data-i18n="successNewBtn">Yana yangi ariza to'ldirish</span>
               </button>
@@ -1217,11 +1246,11 @@
   </section>
 
   <!-- ================= FAQ SECTION ================= -->
-  <section id="faq" class="py-24 bg-niners-grayLight border-b border-zinc-200">
+  <section id="faq" class="py-24 bg-brand-grayLight border-b border-zinc-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center mb-14">
-        <span class="text-xs uppercase font-extrabold tracking-widest text-niners-black bg-niners-yellow px-3 py-1 rounded-md" data-i18n="faqTag">Ko'p Beriladigan Savollar</span>
+        <span class="text-xs uppercase font-extrabold tracking-widest text-black bg-brand-yellow px-3.5 py-1.5 rounded-lg border border-black/10 shadow-sm" data-i18n="faqTag">Ko'p Beriladigan Savollar</span>
         <h2 class="mt-3 text-3xl font-display font-extrabold text-black" data-i18n="faqTitle">
           Sizni qiziqtirgan savollarga javoblar
         </h2>
@@ -1229,8 +1258,8 @@
 
       <div class="space-y-4" id="faq-accordion">
         
-        <!-- FAQ 1 -->
-        <div class="uic-card-light bg-white rounded-2xl overflow-hidden">
+        <!-- FAQ 1 (With Guaranteed Hover Lift) -->
+        <div class="transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white rounded-2xl border border-zinc-200 overflow-hidden">
           <button class="w-full px-6 py-5 text-left font-bold text-black flex items-center justify-between hover:bg-zinc-50 faq-trigger" aria-expanded="false">
             <span data-i18n="faq1Q">Birinchi dars haqiqatan ham bepulmi?</span>
             <i class="fa-solid fa-chevron-down text-xs text-zinc-400 transition-transform duration-200"></i>
@@ -1241,7 +1270,7 @@
         </div>
 
         <!-- FAQ 2 -->
-        <div class="uic-card-light bg-white rounded-2xl overflow-hidden">
+        <div class="transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white rounded-2xl border border-zinc-200 overflow-hidden">
           <button class="w-full px-6 py-5 text-left font-bold text-black flex items-center justify-between hover:bg-zinc-50 faq-trigger" aria-expanded="false">
             <span data-i18n="faq2Q">Native speakerlar qaysi davlatlardan va qachon dars o'tadi?</span>
             <i class="fa-solid fa-chevron-down text-xs text-zinc-400 transition-transform duration-200"></i>
@@ -1252,7 +1281,7 @@
         </div>
 
         <!-- FAQ 3 -->
-        <div class="uic-card-light bg-white rounded-2xl overflow-hidden">
+        <div class="transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white rounded-2xl border border-zinc-200 overflow-hidden">
           <button class="w-full px-6 py-5 text-left font-bold text-black flex items-center justify-between hover:bg-zinc-50 faq-trigger" aria-expanded="false">
             <span data-i18n="faq3Q">Mr. Abdulbosit guruhiga qanday yozilish mumkin?</span>
             <i class="fa-solid fa-chevron-down text-xs text-zinc-400 transition-transform duration-200"></i>
@@ -1263,7 +1292,7 @@
         </div>
 
         <!-- FAQ 4 -->
-        <div class="uic-card-light bg-white rounded-2xl overflow-hidden">
+        <div class="transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg bg-white rounded-2xl border border-zinc-200 overflow-hidden">
           <button class="w-full px-6 py-5 text-left font-bold text-black flex items-center justify-between hover:bg-zinc-50 faq-trigger" aria-expanded="false">
             <span data-i18n="faq4Q">Filiallar qayerda joylashgan va metroga yaqinmi?</span>
             <i class="fa-solid fa-chevron-down text-xs text-zinc-400 transition-transform duration-200"></i>
@@ -1279,46 +1308,42 @@
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="bg-niners-black text-zinc-300 pt-16 pb-12">
+  <footer class="bg-brand-black text-zinc-300 pt-16 pb-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
         
         <!-- Brand Info -->
         <div class="lg:col-span-2 space-y-4">
-          <div class="flex items-center gap-3">
-            <!-- 9-box mini logo -->
-            <div class="w-9 h-9 bg-niners-black border border-white/20 rounded-lg p-1.5 flex flex-col justify-between">
-              <div class="grid grid-cols-3 gap-0.5 w-full h-full">
-                <div class="bg-niners-yellow rounded-[1px]"></div>
-                <div class="bg-niners-yellow rounded-[1px]"></div>
-                <div class="bg-niners-yellow rounded-[1px]"></div>
-                <div class="bg-niners-yellow rounded-[1px]"></div>
-                <div class="bg-niners-yellow rounded-[1px]"></div>
-                <div class="bg-niners-yellow rounded-[1px]"></div>
-                <div class="bg-niners-yellow rounded-[1px]"></div>
-                <div class="bg-niners-yellow rounded-[1px]"></div>
-                <div class="bg-niners-yellow rounded-[1px]"></div>
+          
+          <!-- Official Logo in Footer -->
+          <div class="inline-flex bg-brand-yellow px-3 py-1.5 rounded-xl shadow-md items-center gap-3 border border-yellow-300/60">
+            <div class="relative w-8 h-8 shrink-0 flex items-center justify-center">
+              <div class="absolute inset-0 border-2 border-black/40 rounded-lg translate-x-0.5 translate-y-0.5"></div>
+              <div class="relative w-full h-full bg-black rounded-lg flex items-center justify-center">
+                <span class="font-logo font-black text-xl text-brand-yellow leading-none">9</span>
               </div>
             </div>
-            <span class="font-display font-extrabold text-2xl tracking-tight text-white">
-              NINERS<span class="text-niners-yellow">.</span>
-            </span>
+            <div class="flex flex-col text-left">
+              <span class="font-logo font-black text-base text-black leading-none">Niners</span>
+              <span class="font-sans font-black text-[7.5px] uppercase tracking-[0.18em] text-black/80 mt-0.5">LEARNING CENTER</span>
+            </div>
           </div>
+
           <p class="text-xs sm:text-sm text-zinc-400 max-w-sm leading-relaxed" data-i18n="footerDesc">
             Toshkent shahrida professional ingliz tili, IELTS va xorijiy ekspertlar bilan ravon muloqot ta'limini taklif etuvchi yetakchi o'quv markazi.
           </p>
           <div class="flex items-center gap-3 pt-2">
-            <a href="https://t.me" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-zinc-900 border border-white/10 hover:bg-niners-yellow hover:text-black transition flex items-center justify-center text-sm">
+            <a href="https://t.me" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-zinc-900 border border-white/10 hover:bg-brand-yellow hover:text-black transition flex items-center justify-center text-sm">
               <i class="fa-brands fa-telegram"></i>
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-zinc-900 border border-white/10 hover:bg-niners-yellow hover:text-black transition flex items-center justify-center text-sm">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-zinc-900 border border-white/10 hover:bg-brand-yellow hover:text-black transition flex items-center justify-center text-sm">
               <i class="fa-brands fa-instagram"></i>
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-zinc-900 border border-white/10 hover:bg-niners-yellow hover:text-black transition flex items-center justify-center text-sm">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-zinc-900 border border-white/10 hover:bg-brand-yellow hover:text-black transition flex items-center justify-center text-sm">
               <i class="fa-brands fa-youtube"></i>
             </a>
-            <a href="tel:+998951468180" class="w-9 h-9 rounded-xl bg-zinc-900 border border-white/10 hover:bg-niners-yellow hover:text-black transition flex items-center justify-center text-sm">
+            <a href="tel:+998951468180" class="w-9 h-9 rounded-xl bg-zinc-900 border border-white/10 hover:bg-brand-yellow hover:text-black transition flex items-center justify-center text-sm">
               <i class="fa-solid fa-phone"></i>
             </a>
           </div>
@@ -1328,11 +1353,11 @@
         <div>
           <h4 class="text-white font-bold text-sm mb-4 font-display" data-i18n="footerNavTitle">Bo'limlar</h4>
           <ul class="space-y-2.5 text-xs text-zinc-400">
-            <li><a href="#about" class="hover:text-niners-yellow transition" data-i18n="navAbout">Biz haqimizda</a></li>
-            <li><a href="#courses" class="hover:text-niners-yellow transition" data-i18n="navCourses">Kurslar</a></li>
-            <li><a href="#branches" class="hover:text-niners-yellow transition" data-i18n="navBranches">Filiallar</a></li>
-            <li><a href="#reviews" class="hover:text-niners-yellow transition" data-i18n="navReviews">Sharhlar</a></li>
-            <li><a href="#teachers" class="hover:text-niners-yellow transition" data-i18n="navTeachers">Ustozlar</a></li>
+            <li><a href="#about" class="hover:text-brand-yellow transition" data-i18n="navAbout">Biz haqimizda</a></li>
+            <li><a href="#courses" class="hover:text-brand-yellow transition" data-i18n="navCourses">Kurslar</a></li>
+            <li><a href="#branches" class="hover:text-brand-yellow transition" data-i18n="navBranches">Filiallar</a></li>
+            <li><a href="#reviews" class="hover:text-brand-yellow transition" data-i18n="navReviews">Sharhlar</a></li>
+            <li><a href="#teachers" class="hover:text-brand-yellow transition" data-i18n="navTeachers">Ustozlar</a></li>
           </ul>
         </div>
 
@@ -1340,11 +1365,11 @@
         <div>
           <h4 class="text-white font-bold text-sm mb-4 font-display" data-i18n="footerCoursesTitle">Dasturlar</h4>
           <ul class="space-y-2.5 text-xs text-zinc-400">
-            <li><a href="#courses" class="hover:text-niners-yellow transition">General English</a></li>
-            <li><a href="#courses" class="hover:text-niners-yellow transition">IELTS Intensive (8.5+)</a></li>
-            <li><a href="#courses" class="hover:text-niners-yellow transition">Speaking Club & Native Lab</a></li>
-            <li><a href="#courses" class="hover:text-niners-yellow transition">Kids English Foundation</a></li>
-            <li><a href="#courses" class="hover:text-niners-yellow transition">Mock Exam Testing</a></li>
+            <li><a href="#courses" class="hover:text-brand-yellow transition">General English</a></li>
+            <li><a href="#courses" class="hover:text-brand-yellow transition">IELTS Intensive (8.5+)</a></li>
+            <li><a href="#courses" class="hover:text-brand-yellow transition">Speaking Club & Native Lab</a></li>
+            <li><a href="#courses" class="hover:text-brand-yellow transition">Kids English Foundation</a></li>
+            <li><a href="#courses" class="hover:text-brand-yellow transition">Mock Exam Testing</a></li>
           </ul>
         </div>
 
@@ -1353,18 +1378,18 @@
           <h4 class="text-white font-bold text-sm mb-4 font-display" data-i18n="footerContactTitle">Aloqa & Filiallar</h4>
           <ul class="space-y-3 text-xs text-zinc-400">
             <li class="flex items-start gap-2">
-              <i class="fa-solid fa-phone text-niners-yellow mt-0.5"></i>
+              <i class="fa-solid fa-phone text-brand-yellow mt-0.5"></i>
               <div>
                 <a href="tel:+998951468180" class="hover:text-white transition block">+998 95 146 8180</a>
                 <a href="tel:+998951466160" class="hover:text-white transition block">+998 95 146 6160</a>
               </div>
             </li>
             <li class="flex items-start gap-2">
-              <i class="fa-solid fa-location-dot text-niners-yellow mt-0.5"></i>
+              <i class="fa-solid fa-location-dot text-brand-yellow mt-0.5"></i>
               <span data-i18n="footerBranchesSum">Toshkent: Beruniy, Novza, Farobiy & Yunusobod</span>
             </li>
             <li class="flex items-center gap-2">
-              <i class="fa-regular fa-clock text-niners-yellow"></i>
+              <i class="fa-regular fa-clock text-brand-yellow"></i>
               <span>Dush - Shanba: 08:30 - 20:30</span>
             </li>
           </ul>
@@ -1376,16 +1401,21 @@
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
         <p>Copyright © 2026 Niners Learning Center. All rights reserved.</p>
         <div class="flex items-center gap-6">
+          <button onclick="openCMS()" class="cms-trigger-btn hover:text-brand-yellow transition flex items-center gap-1.5 cursor-pointer text-zinc-400">
+            <i class="fa-solid fa-lock text-[11px] text-brand-yellow"></i>
+            <span>Admin (CMS)</span>
+          </button>
           <span class="hover:text-zinc-400 transition cursor-pointer" data-i18n="footerTerms">Foydalanish qoidalari</span>
           <span class="hover:text-zinc-400 transition cursor-pointer" data-i18n="footerPrivacy">Maxfiylik siyosati</span>
-          <span class="text-niners-yellow font-semibold">Toshkent, O'zbekiston</span>
+          <span class="text-brand-yellow font-semibold">Toshkent, O'zbekiston</span>
         </div>
       </div>
 
     </div>
   </footer>
 
-  <!-- App Interactive JS -->
+  <!-- Enterprise CMS & App Interactive JS -->
+  <script src="cms.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

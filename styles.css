@@ -24,12 +24,25 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+
 .font-display {
   font-family: 'Space Grotesk', sans-serif;
 }
 
 .font-logo {
   font-family: 'Poppins', sans-serif;
+}
+
+/* ==========================================================================
+   HEADER FLAT SINGLE-ROW LAYOUT GUARANTEE
+   ========================================================================== */
+#main-header .navbar-inner {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
 }
 
 /* ==========================================================================
@@ -136,6 +149,39 @@ body {
 
 .btn-yellow-primary:active {
   transform: translateY(0);
+}
+
+/* ==========================================================================
+   ENTERPRISE CMS ADMIN PANEL STYLES
+   ========================================================================== */
+.cms-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.875rem;
+  color: #A1A1AA;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+}
+
+.cms-nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.cms-nav-btn.active {
+  background-color: #FFCC00;
+  color: #0A0A0A;
+  font-weight: 800;
+  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+}
+
+.cms-nav-btn.active i {
+  color: #0A0A0A !important;
 }
 
 /* Custom Scrollbars */
