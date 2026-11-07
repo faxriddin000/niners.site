@@ -40,7 +40,6 @@ const DEFAULT_CMS_DATA = {
       name: "General English",
       level: "Beginner - Advanced",
       duration: "3 oy / bosqich",
-      price: "690 000 so'm / oy",
       description_uz: "Grammatika, so'z boyligi, to'g'ri talaffuz va kundalik nutq ravonligini bosqichma-bosqich shakllantiruvchi kompleks kurs.",
       description_ru: "Комплексный курс, развивающий грамматику, словарный запас, произношение и беглость повседневной речи.",
       description_en: "A comprehensive course enhancing grammar, rich vocabulary, pronunciation, and conversational fluency.",
@@ -57,7 +56,6 @@ const DEFAULT_CMS_DATA = {
       name: "IELTS Intensive & Mastery",
       level: "Target 7.0 - 8.5+",
       duration: "2 - 4 oy",
-      price: "890 000 so'm / oy",
       description_uz: "Listening, Reading, Writing va Speaking bo'yicha maxsus strategiyalar. Real imtihon formatidagi professional tayyorgarlik.",
       description_ru: "Специальные стратегии для Listening, Reading, Writing и Speaking. Профессиональная подготовка к реальному экзамену.",
       description_en: "Tailored strategies for Listening, Reading, Writing, and Speaking under actual examination conditions.",
@@ -74,7 +72,6 @@ const DEFAULT_CMS_DATA = {
       name: "Speaking Club & Native Lab",
       level: "Fluency & Native Accent",
       duration: "Doimiy amaliyot",
-      price: "490 000 so'm / oy",
       description_uz: "Til to'sig'ini butunlay yengish uchun AQSH, Filippin va xorijiy ekspertlar bilan to'g'ridan-to'g'ri debatlar va jonli muloqot.",
       description_ru: "Интерактивные дебаты и открытые дискуссии со спикерами из США, Филиппин и зарубежными гостями для преодоления языкового барьера.",
       description_en: "Break the language barrier through active debates and natural dialogs with US, Filipino, and global guests.",
@@ -85,33 +82,6 @@ const DEFAULT_CMS_DATA = {
         "Zamonaviy idiomalar va slanglar tahlili"
       ],
       isPopular: false
-    }
-  ],
-
-  pricing: [
-    {
-      id: "price-1",
-      name: "Standart Kurs",
-      monthlyFee: "690 000 so'm",
-      fullFee: "1 890 000 so'm (3 oy)",
-      discount: "10% chegirma",
-      features: ["Haftada 3 dars", "Speaking Club bepul", "Kutubxona va audio materiallar", "Oylik monitoring testi"]
-    },
-    {
-      id: "price-2",
-      name: "IELTS Intensive VIP",
-      monthlyFee: "890 000 so'm",
-      fullFee: "2 400 000 so'm (3 oy)",
-      discount: "15% chegirma",
-      features: ["Har kuni qo'shimcha Mock", "Individual Writing tahlili", "Mr. Abdulbosit & Mr. Wise mentorligi", "Kafolatlangan 7.0+ shartnomasi"]
-    },
-    {
-      id: "price-3",
-      name: "Individual (1-on-1)",
-      monthlyFee: "1 500 000 so'm",
-      fullFee: "Moslashuvchan jadval",
-      discount: "Maxsus grafik",
-      features: ["100% individual yondashuv", "O'zingizga qulay vaqt", "Shaxsiy o'quv rejasi", "Tezkor 1 oyda natija"]
     }
   ],
 
@@ -229,7 +199,6 @@ const DEFAULT_CMS_DATA = {
     hero: true,
     about: true,
     courses: true,
-    pricing: true,
     branches: true,
     reviews: true,
     teachers: true,
@@ -361,11 +330,8 @@ function syncLiveWebsite() {
     });
   }
 
-  // 4. Update Courses dynamic prices & cards if container exists
+  // 4. Update Courses dynamic cards if container exists
   renderCoursesOnPage();
-
-  // 4.1 Update Pricing Packages on page
-  renderPricingOnPage();
 
   // 5. Update Branches dynamic contact info
   renderBranchesOnPage();
@@ -408,10 +374,6 @@ function renderCoursesOnPage() {
             ${course.name}
           </h3>
 
-          <div class="inline-block px-3 py-1 rounded-lg bg-black/60 border border-white/10 text-brand-yellow font-black text-sm mb-4">
-            ${course.price || "Narx kelishiladi"}
-          </div>
-
           <p class="text-sm text-zinc-300 mb-6 leading-relaxed">
             ${desc}
           </p>
@@ -428,57 +390,6 @@ function renderCoursesOnPage() {
 
         <button onclick="selectCourseAndEnroll('${course.name}')" class="${isPop ? 'btn-yellow-primary text-black' : 'bg-zinc-800 hover:bg-brand-yellow hover:text-black text-white'} w-full py-4 px-4 rounded-xl font-black text-xs uppercase tracking-wider transition duration-300 flex items-center justify-center gap-2">
           <span>Kursga yozilish</span>
-          <i class="fa-solid fa-arrow-right text-xs"></i>
-        </button>
-      </div>
-    `;
-  }).join('');
-}
-
-function renderPricingOnPage() {
-  const pricingContainer = document.getElementById('pricing-cards-container');
-  if (!pricingContainer || !cmsData.pricing) return;
-
-  pricingContainer.innerHTML = cmsData.pricing.map((p, idx) => {
-    const isVip = idx === 1;
-    return `
-      <div class="transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover-lift-card uic-dark-card rounded-3xl ${isVip ? 'bg-brand-charcoal border-2 border-brand-yellow shadow-2xl shadow-brand-yellow/15' : 'bg-brand-cardDark border border-white/10'} p-8 flex flex-col justify-between group relative">
-        ${isVip ? `
-          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-yellow text-black font-black text-[11px] uppercase tracking-wider px-5 py-1 rounded-full shadow-md">
-            Eng Foydali Paket
-          </div>` : ''}
-        <div>
-          <div class="flex items-center justify-between mb-4 ${isVip ? 'mt-2' : ''}">
-            <span class="px-3 py-1 rounded-full text-xs font-black bg-brand-yellow text-black">
-              ${p.discount || 'STANDART'}
-            </span>
-            <span class="text-zinc-400 text-xs font-medium">${p.fullFee || 'To\'liq kurs'}</span>
-          </div>
-
-          <h3 class="text-2xl font-bold font-display text-white mb-2 group-hover:text-brand-yellow transition-colors">
-            ${p.name}
-          </h3>
-
-          <div class="text-3xl font-display font-extrabold text-brand-yellow my-4">
-            ${p.monthlyFee}
-          </div>
-
-          <p class="text-xs text-zinc-400 mb-6 pb-4 border-b border-white/10">
-            IELTS 7.0 - 8.5+ natijasiga erishish uchun barcha darslar va materiallar jamlanmasi.
-          </p>
-
-          <ul class="space-y-3.5 text-xs text-zinc-300 mb-8">
-            ${(p.features || []).map(f => `
-              <li class="flex items-center gap-3">
-                <i class="fa-solid fa-circle-check text-brand-yellow"></i>
-                <span>${f}</span>
-              </li>
-            `).join('')}
-          </ul>
-        </div>
-
-        <button onclick="selectCourseAndEnroll('${p.name}')" class="${isVip ? 'btn-yellow-primary text-black' : 'bg-zinc-800 hover:bg-brand-yellow hover:text-black text-white'} w-full py-4 px-4 rounded-xl font-black text-xs uppercase tracking-wider transition duration-300 flex items-center justify-center gap-2">
-          <span>Ushbu Tarifni Tanlash</span>
           <i class="fa-solid fa-arrow-right text-xs"></i>
         </button>
       </div>
@@ -801,12 +712,6 @@ function renderCMSPanel() {
             <span>Kurslar (CRUD)</span>
           </button>
 
-          <button onclick="switchCmsTab('pricing')" class="cms-nav-btn ${activeCmsTab === 'pricing' ? 'active' : ''}">
-            <i class="fa-solid fa-tags w-5 text-brand-yellow"></i>
-            <span>Tariflar va Narxlar</span>
-            ${currentAuthUser.role !== 'admin' ? '<i class="fa-solid fa-lock text-[10px] ml-auto text-zinc-500"></i>' : ''}
-          </button>
-
           <button onclick="switchCmsTab('results')" class="cms-nav-btn ${activeCmsTab === 'results' ? 'active' : ''}">
             <i class="fa-solid fa-trophy w-5 text-brand-yellow"></i>
             <span>Natijalar & Keyslar</span>
@@ -878,9 +783,6 @@ function renderActiveCmsTab() {
     case 'courses':
       renderCoursesTab(container);
       break;
-    case 'pricing':
-      renderPricingTab(container);
-      break;
     case 'results':
       renderResultsTab(container);
       break;
@@ -918,7 +820,7 @@ function renderOverviewTab(container) {
           <span class="text-xs uppercase font-extrabold tracking-widest text-brand-yellow">Boshqaruv Paneli</span>
           <h2 class="text-2xl font-bold font-display text-white mt-1">Xush kelibsiz, ${currentAuthUser.name}!</h2>
           <p class="text-xs text-zinc-400 mt-1">
-            Ushbu CMS orqali saytdagi barcha matnlar, narxlar, kurslar va mijozlar arizalarini real vaqtda boshqarishingiz mumkin.
+            Ushbu CMS orqali saytdagi barcha matnlar, kurslar, natijalar va mijozlar arizalarini real vaqtda boshqarishingiz mumkin.
           </p>
         </div>
         <div class="flex items-center gap-3">
@@ -1010,7 +912,7 @@ function renderOverviewTab(container) {
               <span class="text-emerald-400 font-bold"><i class="fa-solid fa-check"></i> Ruxsat etilgan</span>
             </div>
             <div class="flex items-center justify-between p-2 rounded-lg bg-black/40 border border-white/5">
-              <span>Tariflar va narxlarni o'zgartirish:</span>
+              <span>Tizim va bot sozlamalarini boshqarish:</span>
               <span class="${currentAuthUser.role === 'admin' ? 'text-emerald-400 font-bold' : 'text-zinc-500 font-bold'}">
                 ${currentAuthUser.role === 'admin' ? '<i class="fa-solid fa-check"></i> Faol' : '<i class="fa-solid fa-lock"></i> Cheklangan (Faqat Admin)'}
               </span>
@@ -1158,7 +1060,6 @@ function renderCoursesTab(container) {
                 ${c.isPopular ? '<span class="text-[10px] font-black text-brand-yellow"><i class="fa-solid fa-star"></i> POPULAR</span>' : ''}
               </div>
               <h3 class="text-lg font-bold text-white font-display">${c.name}</h3>
-              <div class="text-xs font-bold text-brand-yellow mt-1">${c.price || 'Narx ko\'rsatilmagan'}</div>
               <p class="text-xs text-zinc-400 mt-2 line-clamp-3">${c.description_uz || c.description}</p>
             </div>
 
@@ -1187,7 +1088,6 @@ function openCourseModal(courseId = null) {
     name: '',
     level: 'Beginner - Advanced',
     duration: '3 oy',
-    price: '790 000 so\'m / oy',
     description_uz: '',
     description_ru: '',
     description_en: '',
@@ -1221,11 +1121,6 @@ function openCourseModal(courseId = null) {
               <label class="block font-bold text-zinc-400 mb-1">Davomiyligi</label>
               <input type="text" id="course-modal-duration" value="${escapeHtml(course.duration)}" class="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-white/15 text-white">
             </div>
-          </div>
-
-          <div>
-            <label class="block font-bold text-zinc-400 mb-1">Oylik To'lov Narxi</label>
-            <input type="text" id="course-modal-price" value="${escapeHtml(course.price || '')}" class="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-white/15 text-white">
           </div>
 
           <div>
@@ -1270,7 +1165,6 @@ function saveCourseFromModal(courseId, isEdit) {
   const name = document.getElementById('course-modal-name').value.trim();
   const level = document.getElementById('course-modal-level').value.trim();
   const duration = document.getElementById('course-modal-duration').value.trim();
-  const price = document.getElementById('course-modal-price').value.trim();
   const descUz = document.getElementById('course-modal-desc-uz').value.trim();
   const featuresText = document.getElementById('course-modal-features').value;
   const isPopular = document.getElementById('course-modal-popular').checked;
@@ -1287,7 +1181,6 @@ function saveCourseFromModal(courseId, isEdit) {
     name,
     level,
     duration,
-    price,
     description_uz: descUz,
     features,
     isPopular
@@ -1305,65 +1198,7 @@ function saveCourseFromModal(courseId, isEdit) {
   renderCoursesTab(document.getElementById('cms-tab-content'));
 }
 
-// 4. PRICING TAB (PROTECTED FOR ADMIN)
-function renderPricingTab(container) {
-  const isAdmin = currentAuthUser.role === 'admin';
-  const pricing = cmsData.pricing || [];
-
-  container.innerHTML = `
-    <div class="max-w-4xl mx-auto space-y-6">
-      <div class="flex items-center justify-between">
-        <div>
-          <h2 class="text-2xl font-bold font-display text-white">Tariflar va Paketlar Narxlari</h2>
-          <p class="text-xs text-zinc-400">Oylik to'lovlar, chegirmalar va paket shartlarini belgilash</p>
-        </div>
-        ${!isAdmin ? '<span class="text-xs font-bold text-amber-400 bg-amber-400/10 border border-amber-400/30 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-lock mr-1"></i> Faqat Bosh Administrator tahrirlay oladi</span>' : ''}
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        ${pricing.map(p => `
-          <div class="bg-brand-cardDark border border-white/10 rounded-2xl p-5 flex flex-col justify-between space-y-4">
-            <div>
-              <span class="text-[10px] font-black uppercase px-2 py-0.5 rounded bg-brand-yellow text-black">${p.discount || 'STANDART'}</span>
-              <h3 class="text-lg font-bold text-white font-display mt-2">${p.name}</h3>
-              <div class="text-2xl font-black text-brand-yellow font-display mt-2">${p.monthlyFee}</div>
-              <div class="text-xs text-zinc-400">${p.fullFee}</div>
-
-              <ul class="space-y-2 text-xs text-zinc-300 mt-4">
-                ${(p.features || []).map(f => `<li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-yellow"></i> <span>${f}</span></li>`).join('')}
-              </ul>
-            </div>
-
-            ${isAdmin ? `
-              <button onclick="editPricingPackage('${p.id}')" class="w-full py-2.5 rounded-xl bg-zinc-800 hover:bg-brand-yellow hover:text-black text-white text-xs font-bold transition">
-                <i class="fa-solid fa-pen mr-1"></i> Narxni Tahrirlash
-              </button>
-            ` : ''}
-          </div>
-        `).join('')}
-      </div>
-    </div>
-  `;
-}
-
-function editPricingPackage(id) {
-  if (currentAuthUser.role !== 'admin') {
-    alert("Kechirasiz, narxlarni faqat Bosh Administrator o'zgartira oladi!");
-    return;
-  }
-
-  const p = cmsData.pricing.find(item => item.id === id);
-  if (!p) return;
-
-  const newFee = prompt(`"${p.name}" uchun yangi oylik narxni kiriting:`, p.monthlyFee);
-  if (newFee) {
-    p.monthlyFee = newFee;
-    saveCMSData();
-    renderPricingTab(document.getElementById('cms-tab-content'));
-  }
-}
-
-// 5. RESULTS & CASE STUDIES TAB
+// 4. RESULTS & CASE STUDIES TAB
 function renderResultsTab(container) {
   const results = cmsData.results || [];
 
@@ -1932,7 +1767,6 @@ window.openCourseModal = openCourseModal;
 window.editCourse = editCourse;
 window.deleteCourse = deleteCourse;
 window.saveCourseFromModal = saveCourseFromModal;
-window.editPricingPackage = editPricingPackage;
 window.openResultModal = openResultModal;
 window.deleteResult = deleteResult;
 window.editTeacherBio = editTeacherBio;
