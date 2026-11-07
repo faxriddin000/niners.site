@@ -190,9 +190,9 @@ const DEFAULT_CMS_DATA = {
   },
 
   telegramSettings: {
-    botToken: "",
-    chatId: "",
-    isEnabled: false
+    botToken: "9201196054:AAFSw2kPwk1I0Kf5FkHRDb3T1s1H-uf3Wow",
+    chatId: "8990136215",
+    isEnabled: true
   },
 
   sectionVisibility: {
@@ -232,6 +232,10 @@ const DEFAULT_CMS_DATA = {
   ]
 };
 
+// Official Telegram Default Credentials
+const OFFICIAL_TG_BOT_TOKEN = "9201196054:AAFSw2kPwk1I0Kf5FkHRDb3T1s1H-uf3Wow";
+const OFFICIAL_TG_CHAT_ID = "8990136215";
+
 // ================= CMS STATE MANAGEMENT =================
 let cmsData = loadCMSData();
 let currentAuthUser = loadAuthSession(); // { role: 'admin' | 'editor', name: string }
@@ -242,7 +246,29 @@ function loadCMSData() {
     if (raw) {
       const parsed = JSON.parse(raw);
       // Merge with default to guarantee all properties exist
-      return Object.assign({}, DEFAULT_CMS_DATA, parsed);
+      const merged = Object.assign({}, DEFAULT_CMS_DATA, parsed);
+
+      // Auto-initialize or update to official pre-configured Telegram credentials if empty or placeholder
+      if (!merged.telegramSettings) {
+        merged.telegramSettings = {
+          botToken: OFFICIAL_TG_BOT_TOKEN,
+          chatId: OFFICIAL_TG_CHAT_ID,
+          isEnabled: true
+        };
+      } else {
+        const token = (merged.telegramSettings.botToken || '').trim();
+        const chat = (merged.telegramSettings.chatId || '').trim();
+        if (!token || token === 'YOUR_BOT_TOKEN' || token === '') {
+          merged.telegramSettings.botToken = OFFICIAL_TG_BOT_TOKEN;
+          merged.telegramSettings.isEnabled = true;
+        }
+        if (!chat || chat === 'YOUR_CHAT_ID' || chat === '') {
+          merged.telegramSettings.chatId = OFFICIAL_TG_CHAT_ID;
+          merged.telegramSettings.isEnabled = true;
+        }
+      }
+
+      return merged;
     }
   } catch (err) {
     console.error("CMS: Failed to parse localStorage data, using defaults", err);
@@ -472,49 +498,84 @@ function renderAbdulbositCardOnPage() {
 
 // ================= TELEGRAM BOT NOTIFICATION SERVICE =================
 async function sendTelegramLeadNotification(lead) {
-  const { botToken, chatId, isEnabled } = cmsData.telegramSettings || {};
+  const tg = (cmsData && cmsData.telegramSettings) || {};
+  const botToken = (tg.botToken && tg.botToken.trim()) || OFFICIAL_TG_BOT_TOKEN;
+  const chatId = (tg.chatId && tg.chatId.trim()) || OFFICIAL_TG_CHAT_ID;
+  const isEnabled = typeof tg.isEnabled !== 'undefined' ? tg.isEnabled : true;
+
   if (!isEnabled || !botToken || !chatId) {
     console.log("Telegram notification skipped: Bot is not configured or disabled.");
     return false;
   }
 
-  const messageText = `
-🎯 <b>YANGI ARIZA | NINERS LEARNING CENTER</b>
-━━━━━━━━━━━━━━━━━━━━
-👤 <b>Ism:</b> ${escapeHtml(lead.fullName)}
-📞 <b>Telefon:</b> ${escapeHtml(lead.phoneNumber)}
-📚 <b>Kurs:</b> ${escapeHtml(lead.course || 'Tanlanmagan')}
-📍 <b>Filial:</b> ${escapeHtml(lead.branch || 'Tanlanmagan')}
-👨‍🏫 <b>Ustoz:</b> ${escapeHtml(lead.teacher || 'Ixtiyoriy')}
-💬 <b>Izoh:</b> ${escapeHtml(lead.comment || 'Mavjud emas')}
-⏰ <b>Vaqt:</b> ${escapeHtml(lead.createdAt || new Date().toLocaleString())}
-━━━━━━━━━━━━━━━━━━━━
-<i>Yuboruvchi: Niners.uz CMS Tizimi</i>
-  `.trim();
+  // Active language detection
+  const activeLanguage = (
+    (typeof currentLanguage !== 'undefined' && currentLanguage) ||
+    localStorage.getItem('niners_lang') ||
+    'uz'
+  ).toUpperCase();
+
+  const name = lead.fullName || lead.name || 'Noma\'lum mijoz';
+  const phone = lead.phoneNumber || lead.phone || '-';
+  let serviceOrCourse = lead.course || lead.service || (lead.branch ? `Kurs (${lead.branch})` : 'Umumiy konsultatsiya');
+  if (lead.branch && !serviceOrCourse.includes(lead.branch)) {
+    serviceOrCourse += ` [Filial: ${lead.branch}]`;
+  }
+  if (lead.teacher && lead.teacher !== 'any') {
+    serviceOrCourse += ` [Ustoz: ${lead.teacher}]`;
+  }
+
+  const messageOrDefault = lead.comment || lead.message || "Saytdan ro'yxatdan o'tish arizasi";
+  const timestamp = lead.createdAt || new Date().toLocaleString('uz-UZ', { hour12: false });
+
+  const payload = {
+    chat_id: chatId,
+    parse_mode: "HTML",
+    text: `🚀 <b>YANGI ARIZA (SAYTDAN)!</b>\n\n👤 <b>Ism:</b> ${escapeHtml(name)}\n📞 <b>Telefon:</b> ${escapeHtml(phone)}\n📌 <b>Yo'nalish / Xizmat:</b> ${escapeHtml(serviceOrCourse)}\n💬 <b>Izoh:</b> ${escapeHtml(messageOrDefault)}\n🕒 <b>Vaqt:</b> ${escapeHtml(timestamp)}\n🌐 <b>Til:</b> ${escapeHtml(activeLanguage)}`
+  };
 
   try {
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
     const res = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: messageText,
-        parse_mode: 'HTML'
-      })
+      body: JSON.stringify(payload)
     });
     const result = await res.json();
     if (result.ok) {
-      console.log("Telegram notification sent successfully!");
-      return true;
+      console.log("Telegram notification sent successfully!", result);
+      return { success: true, result };
     } else {
       console.warn("Telegram API Error:", result);
-      return false;
+      return { success: false, error: result.description || 'API Error' };
     }
   } catch (err) {
     console.error("Failed to forward lead to Telegram:", err);
-    return false;
+    return { success: false, error: err.message };
   }
+}
+
+// Universal Lead Submitter (used by all forms/widgets)
+async function submitLead(data) {
+  const newLead = {
+    id: "lead-" + Date.now(),
+    fullName: data.fullName || data.name || 'Mijoz',
+    phoneNumber: data.phoneNumber || data.phone || '',
+    course: data.course || data.service || 'General English',
+    branch: data.branch || 'Shayxontohur (Beruniy)',
+    teacher: data.teacher || 'any',
+    comment: data.comment || data.message || "Sayt arizasi",
+    status: "Yangi",
+    createdAt: new Date().toLocaleString('uz-UZ', { hour12: false })
+  };
+
+  if (!cmsData.leads) cmsData.leads = [];
+  cmsData.leads.unshift(newLead);
+  saveCMSData();
+
+  // Send to Telegram
+  const tgResult = await sendTelegramLeadNotification(newLead);
+  return { success: true, lead: newLead, tgResult };
 }
 
 function escapeHtml(text) {
